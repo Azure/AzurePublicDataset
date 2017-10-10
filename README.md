@@ -19,7 +19,7 @@ The trace contains a representative subset of the first-party Azure VM workload 
 *	Total number of Azure subscriptions: 5,958
 *	Timeseries data: 5-minute VM CPU utilization readings, VM information table and subscription table (with main fields encrypted)
 *	Total VM hours: 104,371,713
-*	Total number of VM CPU utilization readings: 1,249,647,919
+*	Total number of VM CPU utilization readings: 1,246,539,221
 *	Total virtual core hours: 237,815,104
 
 
@@ -44,7 +44,8 @@ The trace contains a representative subset of the first-party Azure VM workload 
 18.	Avg CPU utilization during the 5 minutes
 
 ### Downloading instructions
-You can download the trace from…
+Click [here](https://soon.to.be.released.com) to download de trace.
+
 
 ### Contact us
 Please let us know of any issues or questions by sending email to our <<mailing list>>.

@@ -1,6 +1,6 @@
 # Overview
 
-TThis repository contains a representative subset of the first-party virtual machine workload (VM) of Microsoft Azure in one of its geographical regions.  The trace is a sanitized subset of the Azure VM workload described in "Resource Central: Understanding and Predicting Workloads for Improved Resource Management in Large Cloud Platforms" in SOSP’17.  One of the files in this repository directly compares the main characteristics of the two traces, showing that they are qualitatively very similar.
+This repository contains a representative subset of the first-party virtual machine workload (VM) of Microsoft Azure in one of its geographical regions.  The trace is a sanitized subset of the Azure VM workload described in "Resource Central: Understanding and Predicting Workloads for Improved Resource Management in Large Cloud Platforms" in SOSP’17.  One of the files in this repository directly compares the main characteristics of the two traces, showing that they are qualitatively very similar.
 
 We provide the trace as is, but are willing to help researchers understand and use it.  So, please let us know of any issues or questions by sending email to our <<mailing list>>.
 

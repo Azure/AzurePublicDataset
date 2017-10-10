@@ -26,7 +26,7 @@ The trace contains a representative subset of the first-party Azure VM workload 
 ### Schema:
 1.	Encrypted subscription id
 2.	Encrypted deployment id 
-3.	Timestamp (starting from 0) when first VM created
+3.	Timestamp in seconds (starting from 0) when first VM created
 4.	Count VMs created
 5.	Deployment size (we define a “deployment” differently than Azure in our paper)
 6.	Encrypted VM id
@@ -38,7 +38,7 @@ The trace contains a representative subset of the first-party Azure VM workload 
 12.	VM category
 13.	VM virtual core count
 14.	VM memory (GBs)
-15.	Timestamp (every 5 minutes)
+15.	Timestamp in seconds (every 5 minutes)
 16.	Min CPU utilization during the 5 minutes
 17.	Max CPU utilization during the 5 minutes
 18.	Avg CPU utilization during the 5 minutes

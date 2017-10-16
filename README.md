@@ -1,9 +1,9 @@
 # Overview
 
 
-This repository contains a representative subset of the first-party virtual machine workload (VM) of Microsoft Azure in one of its geographical regions.  The trace is a sanitized subset of the Azure VM workload described in "Resource Central: Understanding and Predicting Workloads for Improved Resource Management in Large Cloud Platforms" in SOSP’17.  We include in this repository a [jupyter notebook](https://github.com/Azure/AzurePublicDataset/blob/master/analysis/Azure%20Public%20Dataset%20-%20Trace%20Analysis.ipynb) that directly compares the main characteristics of the two traces, showing that they are qualitatively very similar.
+This repository contains a representative subset of the first-party virtual machine workload (VM) of Microsoft Azure in one of its geographical regions.  The trace is a sanitized subset of the Azure VM workload described in ["Resource Central: Understanding and Predicting Workloads for Improved Resource Management in Large Cloud Platforms"](https://www.microsoft.com/en-us/research/wp-content/uploads/2017/10/Resource-Central-SOSP17.pdf) in SOSP’17.  We include in this repository a [jupyter notebook](https://github.com/Azure/AzurePublicDataset/blob/master/analysis/Azure%20Public%20Dataset%20-%20Trace%20Analysis.ipynb) that directly compares the main characteristics of the two traces, showing that they are qualitatively very similar.
 
-We provide the trace as is, but are willing to help researchers understand and use it.  So, please let us know of any issues or questions by sending email to our <<mailing list>>.
+We provide the trace as is, but are willing to help researchers understand and use it.  So, please let us know of any issues or questions by sending email to our [mailing list](mailto:azurepublicdataset@service.microsoft.com).
 
 If you do use this trace in your research, please make sure to cite our SOSP’17 paper (mentioned above).
 
@@ -44,9 +44,9 @@ The trace contains a representative subset of the first-party Azure VM workload 
 18.	Avg CPU utilization during the 5 minutes
 
 ### Downloading instructions
-Click [here](https://soon.to.be.released.com) to download de trace.
+Click [here](https://1drv.ms/f/s!Aiqq6WwaLhnigcNYZ5DXOExYH_n0Aw) to download de trace.
 
 
 ### Contact us
-Please let us know of any issues or questions by sending email to our <<mailing list>>.
+Please let us know of any issues or questions by sending email to our [mailing list](mailto:azurepublicdataset@service.microsoft.com).
 

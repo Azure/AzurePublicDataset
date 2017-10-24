@@ -50,3 +50,4 @@ Click [here](https://1drv.ms/f/s!Aiqq6WwaLhnigcNYZ5DXOExYH_n0Aw) to download de 
 ### Contact us
 Please let us know of any issues or questions by sending email to our [mailing list](mailto:azurepublicdataset@service.microsoft.com).
 
+This trace derives from a collaboration between Azure and Microsoft Research.

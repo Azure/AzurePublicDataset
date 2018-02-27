@@ -44,8 +44,7 @@ The trace contains a representative subset of the first-party Azure VM workload 
 18.	Avg CPU utilization during the 5 minutes
 
 ### Downloading instructions
-Click [here](https://1drv.ms/f/s!Aiqq6WwaLhnigcNYZ5DXOExYH_n0Aw) to download de trace.
-
+You can download the dataset from Azure Blob Storage using the links available [here](https://github.com/Azure/AzurePublicDataset/blob/master/AzurePublicDatasetLinks.txt).
 
 ### Contact us
 Please let us know of any issues or questions by sending email to our [mailing list](mailto:azurepublicdataset@service.microsoft.com).

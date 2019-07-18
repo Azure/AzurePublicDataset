@@ -6,7 +6,7 @@ We provide the traces as they are, but are willing to help researchers understan
 
 If you do use either of these traces in your research, please make sure to cite our SOSP’17 paper ["Resource Central: Understanding and Predicting Workloads for Improved Resource Management in Large Cloud Platforms"](https://www.microsoft.com/en-us/research/wp-content/uploads/2017/10/Resource-Central-SOSP17.pdf), which includes a full analysis of the Azure VM workload in 2017.
 
-## VM Trace
+## VM Traces
 
 * [AzurePublicDatasetV1](https://github.com/Azure/AzurePublicDataset/blob/master/AzurePublicDatasetV1.md) - Trace built using data from 2017 Azure VM Workload containing information about ~2MM VMs and 1.2B CPU Readings.
 * [AzurePublicDatasetV2](https://github.com/Azure/AzurePublicDataset/blob/master/AzurePublicDatasetV2.md) - Trace built using data from 2019 Azure VM Workload containing information about ~2.6MM VMs and 1.9B CPU Readings.

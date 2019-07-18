@@ -1,7 +1,10 @@
 # AzurePublicDatasetV1
 
 ## VM Trace
-The trace contains a representative subset of the first-party Azure VM workload in one geographical region.  The main trace characteristics and schema are:
+The trace contains a representative subset of the first-party Azure VM workload in one geographical region.  
+This [jupyter notebook](https://github.com/Azure/AzurePublicDataset/blob/master/analysis/Azure%20Public%20Dataset%20-%20Trace%20Analysis.ipynb) directly compares the main characteristics of the this trace and the one described in ["Resource Central: Understanding and Predicting Workloads for Improved Resource Management in Large Cloud Platforms"](https://www.microsoft.com/en-us/research/wp-content/uploads/2017/10/Resource-Central-SOSP17.pdf) in SOSP’17, showing that they are qualitatively very similar.
+
+The main trace characteristics and schema are:
 
 ### Main characteristics:
 *	Dataset size: 117GB

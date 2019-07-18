@@ -2,7 +2,7 @@
 
 ## VM Trace
 The trace contains a representative subset of the first-party Azure VM workload in one geographical region.  
-This [jupyter notebook](https://github.com/Azure/AzurePublicDataset/blob/master/analysis/Azure%202019%20Public%20Dataset%20V2%20-%20Trace%20Analysis.ipynb) directly compares the main characteristics of the this trace and the a complete Azure Workload in 2019, showing that they are qualitatively very similar.
+This [jupyter notebook](https://github.com/Azure/AzurePublicDataset/blob/master/analysis/Azure%202019%20Public%20Dataset%20V2%20-%20Trace%20Analysis.ipynb) directly compares the main characteristics of the this trace and the a complete Azure workload in 2019, showing that they are qualitatively very similar (except for VM deployment sizes).
 
 The main trace characteristics and schema are:
 

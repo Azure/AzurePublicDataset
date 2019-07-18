@@ -8,8 +8,8 @@ If you do use either of these traces in your research, please make sure to cite 
 
 ## VM Trace
 
-* AzurePublicDatasetV1 - Trace built using data from 2017 Azure VM Workload.
-* AzurePublicDatasetV2 - Trace built using data from 2019 Azure VM Workload.
+* [AzurePublicDatasetV1](https://github.com/Azure/AzurePublicDataset/blob/master/AzurePublicDatasetV1.md) - Trace built using data from 2017 Azure VM Workload containing information about ~2MM VMs and 1.2B CPU Readings.
+* [AzurePublicDatasetV2](https://github.com/Azure/AzurePublicDataset/blob/master/AzurePublicDatasetV2.md) - Trace built using data from 2019 Azure VM Workload containing information about ~2.6MM VMs and 1.9B CPU Readings.
 
 
 ### Contact us

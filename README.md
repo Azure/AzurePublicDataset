@@ -21,7 +21,11 @@ If you do use either of these VM traces in your research, please make sure to ci
 
 (To be released soon)
 
-These will contain the number of invocations per minute of a subset of (anonymized) first-party Azure Functions, and how they are grouped together into (anonymized) applications.
+These will contain, for a subset of (anonymized) first-party Azure Functions:
+* how they are grouped into (anonymized) applications,
+* how many times per minute each function is invoked and its corresponding trigger
+* the distribution of execution times per function
+* the distribution of memory usage per application
 
 ### Contact us
 Please let us know of any issues or questions by sending email to our [mailing list](mailto:azurepublicdataset@service.microsoft.com).

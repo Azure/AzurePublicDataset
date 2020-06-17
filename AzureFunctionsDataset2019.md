@@ -4,9 +4,9 @@
 ## Introduction
 This is a set of files representing part of the workload of Microsoft's Azure Functions offering, collected in July of 2019. This dataset is a subset of the data described in, and analyzed, in the USENIX ATC 2020 paper 'Serverless in the Wild: Characterizing and Optimizing the Serverless Workload at a Large Cloud Provider'. 
 
-Included here is only data pertaining to a random sample of Azure Functions applications. The sampling is done per application, so that if there is data about an application in the trace, then all of its functions are included. The sampling rate is small and unspecified, but as the accompanying notebook shows, the distributions in the released trace are a good match to those in the ATC paper.
+Functions in Azure Functions are grouped into Applications. Included here is only data pertaining to a random sample of Azure Functions applications. The sampling is done per application, so that if there is data about an application in the trace, then all of its functions are included. The sampling rate is small and unspecified, but as the accompanying notebook shows, the distributions in the released trace are a good match to those in the ATC paper.
 
-Functions in Azure Functions are grouped into Applications, and [applications are the unit of resource allocation](https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference#function-app). This has a few practical implications: for example, warm-up decisions are made at the application level, and memory allocation is measured by application, not by function. The 'HashOwner' field in these files is used to group applications that belong to the same subscription in Azure. It is included to indicate applications that are possibly related to each other. 
+In Azure Functions, [applications are the unit of resource allocation](https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference#function-app). This has a few practical implications: for example, warm-up decisions are made at the application level, and memory allocation is measured by application, not by function. The 'HashOwner' field in these files is used to group applications that belong to the same subscription in Azure. It is included to indicate applications that are possibly related to each other. 
 
 The dataset comprises this description, and an [R notebook](https://github.com/Azure/AzurePublicDataset/blob/master/analysis/AzureFunctionsDataset2019-Trace_Analysis.md) with plots comparing the released trace with the ATC paper, and the following sets of files: 
 
@@ -56,7 +56,7 @@ You can download the dataset here: https://azurecloudpublicdataset2.blob.core.wi
 
 #### Notes
  1. All ids are hashed using HMAC-SHA256 with secret salts. Each column uses a different salt. These are consistent across the different types of files, so you can correlate onwers, apps, and functions here with those in the duration and memory data. Note that two apps with the same original name under different owners would be hashed to *different* values. Likewise, two functions with the same original name belonging to different apps would be hashed to different values. 
- 2. Trigger indicates one of the trigger groups from the paper. Azure Functions has a large number of triggers, see [here](https://docs.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings) for details. The trigger groups we use are the following:
+ 2. Trigger indicates one of the trigger groups from the paper. Azure Functions has a large number of triggers, see [here](https://docs.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings) for details. Here, as in the paper, we group triggers of similar types into the 7 following groups:
 
     * **http** (HTTP)
     * **timer** (Timer) 
@@ -64,7 +64,7 @@ You can download the dataset here: https://azurecloudpublicdataset2.blob.core.wi
     * **queue** (Service Bus, Queue Storage, RabbitMQ, Kafka, MQTT)
     * **storage** (Blob Storage, CosmosDB, Redis, File)
     * **orchestration** (Durable Functions: activities, orcherstration)
-    * **others** 
+    * **others** (all other triggers)
      
 
 3.  The number of invocations is recorded after the functions execute
@@ -122,6 +122,6 @@ You can download the dataset here: https://azurecloudpublicdataset2.blob.core.wi
 
  ## Validation
 
- This data is a small subset of the data used in the ATC paper above. To verify that it is a representative subset, we reproduced the characterization graph in the paper using the released trace subset in this [R Notebook](https://htmlpreview.github.io/?github.com/Azure/AzurePublicDataset/raw/master/analysis/AzureFunctionsDataset2019%20-%20Trace%20Analysis.html).
+ This data is a small subset of the data used in the ATC paper above. To verify that it is a representative subset, we reproduced the characterization graph in the paper using the released trace subset in this [R Notebook](https://github.com/Azure/AzurePublicDataset/blob/master/analysis/AzureFunctionsDataset2019-Trace_Analysis.md).
 
 

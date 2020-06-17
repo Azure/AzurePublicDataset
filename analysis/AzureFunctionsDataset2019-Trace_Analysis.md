@@ -23,20 +23,6 @@ whole workload, except for the graphs in Figure 5, where the graphs in
 the paper (and here) are also subset of the full trace, albeit larger
 than the released trace.
 
-If use these traces for a publication or other work, please cite our 2020 USENIX ATC paper, [Serverless in the Wild: Characterizing and Optimizing the Serverless Workload at a Large Cloud Provider](https://www.microsoft.com/en-us/research/uploads/prod/2020/05/serverless-ATC20.pdf):
-
-    @INPROCEEDINGS {shahrad2020serverless,
-        author    = "Mohammad Shahrad and Rodrigo Fonseca and Inigo Goiri and Gohar Chaudhry and 
-                     Paul Batum and Jason Cooke and Eduardo Laureano and Colby Tresness and 
-                    Mark Russinovich and Ricardo Bianchini",
-        title     = "{Serverless in the Wild: Characterizing and Optimizing the Serverless Workload at a Large Cloud Provider}",
-        booktitle = "2020 {USENIX} Annual Technical Conference ({USENIX} {ATC} 20)",
-        year      = "2020",
-        address   = "Boston, MA, USA",
-        month     = "jul",
-        publisher = "{USENIX} Association"
-    }
-
 # Initial loading and setup
 
 ``` r

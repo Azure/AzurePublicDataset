@@ -8,7 +8,7 @@ Included here is only data pertaining to a random sample of Azure Functions appl
 
 Functions in Azure Functions are grouped into Applications, and [applications are the unit of resource allocation](https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference#function-app). This has a few practical implications: for example, warm-up decisions are made at the application level, and memory allocation is measured by application, not by function. The 'HashOwner' field in these files is used to group applications that belong to the same subscription in Azure. It is included to indicate applications that are possibly related to each other. 
 
-The dataset comprises this description, and an R notebook with plots comparing the released trace with the ATC paper, and the following sets of files: 
+The dataset comprises this description, and an [R notebook](https://github.com/Azure/AzurePublicDataset/blob/master/analysis/AzureFunctionsDataset2019-Trace_Analysis.md) with plots comparing the released trace with the ATC paper, and the following sets of files: 
 
  - Function invocation counts and triggers
  - Function execution time distributions

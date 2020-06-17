@@ -6,7 +6,7 @@ Comparing Azure Function Workloads - Released Trace vs ATC Paper
 This is an R notebook that compares the released Azure Functions Trace
 from 2019 to the traces used in the ATC paper ‘Serverless in the Wild’.
 The main goal of this notebook is to show that the released trace is
-representative of the dataset used in the paper.
+representative of the dataset used in the paper. For details of the graphs, please refer to the [paper]((https://www.microsoft.com/en-us/research/uploads/prod/2020/05/serverless-ATC20.pdf)). For details of the trace, please refer to the [trace description](https://github.com/Azure/AzurePublicDataset/blob/master/AzureFunctionsDataset2019.md).
 
 In the graphs that follow, ‘ATC’ means the data that was used in the
 paper to produce the corresponding graph, and ‘Released’ means the
@@ -23,8 +23,7 @@ whole workload, except for the graphs in Figure 5, where the graphs in
 the paper (and here) are also subset of the full trace, albeit larger
 than the released trace.
 
-If you are using these traces for a publication, please cite out 2020
-USENIX ATC paper ([arXiv link](https://arxiv.org/abs/2003.03423)):
+If use these traces for a publication or other work, please cite our 2020 USENIX ATC paper, [Serverless in the Wild: Characterizing and Optimizing the Serverless Workload at a Large Cloud Provider](https://www.microsoft.com/en-us/research/uploads/prod/2020/05/serverless-ATC20.pdf):
 
     @INPROCEEDINGS {shahrad2020serverless,
         author    = "Mohammad Shahrad and Rodrigo Fonseca and Inigo Goiri and Gohar Chaudhry and 

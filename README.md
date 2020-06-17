@@ -1,7 +1,10 @@
 # Overview
 
 This repository contains public releases of Microsoft Azure traces for the benefit of the research and academic community.
-There are currently two classes of traces. The first class contains two representative traces of the virtual machine (VM) workload of Microsoft Azure collected in 2017 and 2019.  The second (will soon) contain representative traces of Azure Functions invocations, collected over two weeks in 2019. 
+There are currently two classes of traces: 
+
+* The first class contains two representative traces of the virtual machine (VM) workload of Microsoft Azure collected in 2017 and 2019.  
+* The second contains representative traces of Azure Functions invocations, collected over two weeks in 2019. 
 
 We provide the traces as they are, but are willing to help researchers understand and use them. So, please let us know of any issues or questions by sending email to our  [mailing list](mailto:azurepublicdataset@service.microsoft.com).
 
@@ -19,13 +22,17 @@ If you do use either of these VM traces in your research, please make sure to ci
 
 ## Azure Functions Traces
 
-(To be released soon)
+* [AzureFunctionsDataset2019](https://github.com/Azure/AzurePublicDataset/blob/master/AzureFunctionsDataset2019.md) - These traces contain, for a subset of applications running on Azure Functions in July of 2019:
 
-These will contain, for a subset of (anonymized) first-party Azure Functions:
-* how they are grouped into (anonymized) applications,
-* how many times per minute each function is invoked and its corresponding trigger
-* the distribution of execution times per function
-* the distribution of memory usage per application
+  * how many times per minute each (anonymized) function is invoked and its corresponding trigger group
+  * how (anonymized) functions are grouped into (anonymized) applications, and how applications are grouped by (anonymized) owner
+  * the distribution of execution times per function
+  * the distribution of memory usage per application
+
+If you use this data for a publication or project, please cite the accompanying paper:
+
+> Mohammad Shahrad, Rodrigo Fonseca, Inigo Goiri, Gohar Chaudhry, Paul Batum, Jason Cooke, Eduardo Laureano, Colby Tresness, Mark Russinovich, Ricardo Bianchini. "[**Serverless in the Wild: Characterizing and Optimizing the Serverless Workload at a Large Cloud Provider**](https://www.microsoft.com/en-us/research/uploads/prod/2020/05/serverless-ATC20.pdf)", in Proceedings of the 2020 USENIX Annual Technical Conference (USENIX ATC 20). USENIX Association, Boston, MA, July 2020.
+
 
 ### Contact us
 Please let us know of any issues or questions by sending email to our [mailing list](mailto:azurepublicdataset@service.microsoft.com).

@@ -22,19 +22,8 @@ The data is made available and licensed under a [CC-BY Attribution License](http
 ### Attribution
 If you use this data for a publication or project, please cite the accompanying paper:
 
-> Mohammad Shahrad, Rodrigo Fonseca, Inigo Goiri, Gohar Chaudhry, Paul Batum, Jason Cooke, Eduardo Laureano, Colby Tresness, Mark Russinovich, Ricardo Bianchini. "[**Serverless in the Wild: Characterizing and Optimizing the Serverless Workload at a Large Cloud Provider**](https://www.microsoft.com/en-us/research/uploads/prod/2020/05/serverless-ATC20.pdf)", in Proceedings of the 2020 USENIX Annual Technical Conference (USENIX ATC 20). USENIX Association, Boston, MA, July 2020. To appear.
+> Mohammad Shahrad, Rodrigo Fonseca, Inigo Goiri, Gohar Chaudhry, Paul Batum, Jason Cooke, Eduardo Laureano, Colby Tresness, Mark Russinovich, Ricardo Bianchini. "[**Serverless in the Wild: Characterizing and Optimizing the Serverless Workload at a Large Cloud Provider**](https://www.microsoft.com/en-us/research/uploads/prod/2020/05/serverless-ATC20.pdf)", in Proceedings of the 2020 USENIX Annual Technical Conference (USENIX ATC 20). USENIX Association, Boston, MA, July 2020. 
 
-```
-@INPROCEEDINGS {shahrad2020serverless,
-    author    = "Mohammad Shahrad and Rodrigo Fonseca and Inigo Goiri and Gohar Chaudhry and Paul Batum and Jason Cooke and Eduardo Laureano and Colby Tresness and Mark Russinovich and Ricardo Bianchini",
-    title     = "{Serverless in the Wild: Characterizing and Optimizing the Serverless Workload at a Large Cloud Provider}",
-    booktitle = "2020 {USENIX} Annual Technical Conference ({USENIX} {ATC} 20)",
-    year      = "2020",
-    address   = "Boston, MA, USA",
-    month     = "jul",
-    publisher = "{USENIX} Association"
-}
-```
 
 Lastly, if you have any questions, comments, or concerns, or if you would like to share tools for working with the traces, please contact us at azurepublicdataset@service.microsoft.com 
 

@@ -369,7 +369,8 @@ ggplot() +
 ## Figure 5(b)
 
 ``` r
-# Again, both sets of curves are from different subsets of the full dataset: atc is the subset used in the paper, release is the public trace release.
+# Again, both sets of curves are from different subsets of the full dataset: 
+# atc is the subset used in the paper, release is the public trace release.
 
 atc_invocations_per_app_cum <- atc_functions_and_invocations_per_app %>% 
     select(-c(SubscriptionId,AppName,AvgInvocationsPerDay,Functions)) %>%

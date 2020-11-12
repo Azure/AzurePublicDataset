@@ -31,9 +31,17 @@ If you do use either of these VM traces in your research, please make sure to ci
 
 If you do use the Azure Functions traces in your research, please make sure to cite our ATC'20 paper ["Serverless in the Wild: Characterizing and Optimizing the Serverless Workload at a Large Cloud Provider"](https://www.microsoft.com/en-us/research/uploads/prod/2020/05/serverless-ATC20.pdf), which includes a full analysis of the Azure Functions workload in July 2019.
 
-## Azure Trace for Packing
+## Azure Traces for Packing
 
-* [AzureTracesForPackingV1](https://github.com/Azure/AzurePublicDataset/blob/master/AzureTracesForPackingV1.md) - This dataset represents part of the workload on Microsoft's Azure Compute and is specifically designed to evaluate packing algorithms.
+* [AzureFunctionsDataset2020](https://github.com/Azure/AzurePublicDataset/blob/master/AzureTracesForPacking2020.md) - This dataset represents part of the workload on Microsoft's Azure Compute and is specifically intended to evaluate packing algorithms. The dataset includes:
+
+  * VM requests along with their priority
+  * The lifetime for each requested VM
+  * The (normalized) resources allocated for each VM type.
+
+
+If you do use the Azure Trace for Packing in your research, please make sure to cite our OSDI'20 paper ["Protean: VM Allocation Service at Scale"](https://www.usenix.org/system/files/osdi20-hadary.pdf), which includes a description of the Azure allocator and related workload analysis.
+
 
 ### Contact us
 Please let us know of any issues or questions by sending email to our [mailing list](mailto:azurepublicdataset@service.microsoft.com).

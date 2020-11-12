@@ -33,7 +33,7 @@ If you do use the Azure Functions traces in your research, please make sure to c
 
 ## Azure Traces for Packing
 
-* [AzureFunctionsDataset2020](https://github.com/Azure/AzurePublicDataset/blob/master/AzureTracesForPacking2020.md) - This dataset represents part of the workload on Microsoft's Azure Compute and is specifically intended to evaluate packing algorithms. The dataset includes:
+* [AzureTracesForPacking2020](https://github.com/Azure/AzurePublicDataset/blob/master/AzureTracesForPacking2020.md) - This dataset represents part of the workload on Microsoft's Azure Compute and is specifically intended to evaluate packing algorithms. The dataset includes:
 
   * VM requests along with their priority
   * The lifetime for each requested VM

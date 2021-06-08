@@ -1,22 +1,22 @@
-# AzurePublicDatasetV2
+# AzurePublicDatasetV1
 
 ## VM Trace
 The trace contains a representative subset of the first-party Azure VM workload in one geographical region.  
-This [jupyter notebook](https://github.com/Azure/AzurePublicDataset/blob/master/analysis/Azure%202019%20Public%20Dataset%20V2%20-%20Trace%20Analysis.ipynb) directly compares the main characteristics of the this trace and the a complete Azure workload in 2019, showing that they are qualitatively very similar (except for VM deployment sizes).
+This [jupyter notebook](https://github.com/Azure/AzurePublicDataset/blob/master/analysis/Azure%20Public%20Dataset%20-%20Trace%20Analysis.ipynb) directly compares the main characteristics of the this trace and the one described in ["Resource Central: Understanding and Predicting Workloads for Improved Resource Management in Large Cloud Platforms"](https://www.microsoft.com/en-us/research/wp-content/uploads/2017/10/Resource-Central-SOSP17.pdf) -  SOSP’17, showing that they are qualitatively very similar.
 
 The main trace characteristics and schema are:
 
 ### Main characteristics:
-*	Dataset size: 235GB
-*	Compressed dataset size: 156GB
-*	Number of files: 198 files
+*	Dataset size: 117GB
+*	Compressed dataset size: 78.5GB
+*	Number of files: 128 files
 *	Duration: 30 consecutive days
-*	Total number of VMs: 2,695,548
-*	Total number of Azure subscriptions: 6,687
+*	Total number of VMs: 2,013,767
+*	Total number of Azure subscriptions: 5,958
 *	Timeseries data: 5-minute VM CPU utilization readings, VM information table and subscription table (with main fields encrypted)
 *	Total VM hours: 104,371,713
-*	Total number of VM CPU utilization readings: 1,942,780,023
-*	Total virtual core hours: >380,000,000
+*	Total number of VM CPU utilization readings: 1,246,539,221
+*	Total virtual core hours: 237,815,104
 
 
 ### Schema:
@@ -32,14 +32,12 @@ The main trace characteristics and schema are:
 10.	Avg CPU utilization
 11.	P95 of Max CPU utilization
 12.	VM category
-13.	VM virtual core count bucket
-14.	VM memory (GBs) bucket
+13.	VM virtual core count
+14.	VM memory (GBs)
 15.	Timestamp in seconds (every 5 minutes)
 16.	Min CPU utilization during the 5 minutes
 17.	Max CPU utilization during the 5 minutes
 18.	Avg CPU utilization during the 5 minutes
-19. VM virtual core count bucket definition
-20. VM memory (GBs) bucket definition
 
 ### Downloading instructions
-You can download the dataset from Azure Blob Storage using the links available [here](https://github.com/Azure/AzurePublicDataset/blob/master/AzurePublicDatasetLinksV2.txt).
+You can download the dataset from Azure Blob Storage using the links available [here](AzurePublicDatasetV1Links.txt).

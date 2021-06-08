@@ -18,11 +18,11 @@ If you do use either of these VM traces in your research, please make sure to ci
 ### Trace Locations
 
 * [AzurePublicDatasetV1](azure-datasets-2017/README.md) - Trace created using data from 2017 Azure VM workload containing information about ~2M VMs and 1.2B utilization readings.
-* [AzurePublicDatasetV2](https://github.com/Azure/AzurePublicDataset/blob/master/AzurePublicDatasetV2.md) - Trace created using data from 2019 Azure VM workload containing information about ~2.6M VMs and 1.9B utilization readings.
+* [AzurePublicDatasetV2](azure-datasets-2019/AzurePublicDatasetV2.md) - Trace created using data from 2019 Azure VM workload containing information about ~2.6M VMs and 1.9B utilization readings.
 
 ## Azure Functions Traces
 
-* [AzureFunctionsDataset2019](https://github.com/Azure/AzurePublicDataset/blob/master/AzureFunctionsDataset2019.md) - These traces contain, for a subset of applications running on Azure Functions in July of 2019:
+* [AzureFunctionsDataset2019](azure-datasets-2019/AzureFunctionsDataset2019.md) - These traces contain, for a subset of applications running on Azure Functions in July of 2019:
 
   * how many times per minute each (anonymized) function is invoked and its corresponding trigger group
   * how (anonymized) functions are grouped into (anonymized) applications, and how applications are grouped by (anonymized) owner
@@ -33,7 +33,7 @@ If you do use the Azure Functions traces in your research, please make sure to c
 
 ## Azure Traces for Packing
 
-* [AzureTracesForPacking2020](https://github.com/Azure/AzurePublicDataset/blob/master/AzureTracesForPacking2020.md) - This dataset represents part of the workload on Microsoft's Azure Compute and is specifically intended to evaluate packing algorithms. The dataset includes:
+* [AzureTracesForPacking2020](azure-datasets-2020/AzureTracesForPacking2020.md) - This dataset represents part of the workload on Microsoft's Azure Compute and is specifically intended to evaluate packing algorithms. The dataset includes:
 
   * VM requests along with their priority
   * The lifetime for each requested VM

@@ -42,4 +42,4 @@ The main trace characteristics and schema are:
 20. VM memory (GBs) bucket definition
 
 ### Downloading instructions
-You can download the dataset from Azure Blob Storage using the links available [here](https://github.com/Azure/AzurePublicDataset/blob/master/AzurePublicDatasetLinksV2.txt).
+You can download the dataset from Azure Blob Storage using the links available [here](AzurePublicDatasetV2Links.txt).

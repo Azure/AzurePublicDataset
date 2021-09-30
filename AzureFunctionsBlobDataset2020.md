@@ -2,7 +2,7 @@
 -- revision 1, 20210904
 
 ## Introduction
-This is a sample of the blob accesses in [Microsoft's Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview), collected between November 23^rd^ and December 6^th^ 2020.
+This is a sample of the blob accesses in [Microsoft's Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview), collected between November 23rd and December 6th 2020.
 This dataset is the data described and analyzed in the SoCC 2021 paper 'Faa$T: A Transparent Auto-Scaling Cache for Serverless Applications'.
 
 *Functions* in Azure Functions are grouped into *Applications*.

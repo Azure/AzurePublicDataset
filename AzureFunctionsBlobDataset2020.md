@@ -2,7 +2,7 @@
 -- revision 1, 20210904
 
 ## Introduction
-This is a sample of the blob accesses in [Microsoft's Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview), collected between November 23rd and December 6th 2020.
+This is a sample of the blob accesses in [Microsoft's Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview), collected between November 23<sup>rd</sup> and December 6<sup>th</sup> 2020.
 This dataset is the data described and analyzed in the SoCC 2021 paper 'Faa$T: A Transparent Auto-Scaling Cache for Serverless Applications'.
 
 *Functions* in Azure Functions are grouped into *Applications*.
@@ -49,13 +49,13 @@ You can download the dataset here: https://azurecloudpublicdataset2.blob.core.wi
 
 #### Sample
 |Timestamp|AnonRegion|AnonUserId|AnonAppName|AnonFunctionInvocationId|AnonBlobName|BlobType|AnonBlobETag|BlobBytes|Read|Write  |
-|--|--|-|--|--|--|--|--|--|--|--|--|
+|--|--|--|--|--|--|--|--|--|--|--|
 | 1606092900138 | 6ex | 775920313 | 9gti3olh | 1565080819 | jfvf7k9kwiiq7gdx | BlockBlob/application/octet-stream | kq2su6bhi0 | 30.0 | True | False |
 | 1606928903185 | 6ex | 1252244298 | 7c51my6n | 1191849141 | 1fjxqoqi2nc5njpg | BlockBlob/application/zip | ibd6a5v5pv | 1938488.0 | True | False |
 | 1606355700058 | iic | 1495523193 | uf2u84b0 | 1302383289 | tp783etybrgxap8x | BlockBlob/ | 6mreka6qhr | 36.0 | False | True |
 | 1606924856178 | iic | 705112778 | 1jgfqbn6 | 1869133266 | 80lssrlkciitddx9 | BlockBlob/ | if8foq3a81 | 2204780.0 | False | True |
 | 1606658957997 | 6ex | 1252244298 | 15dp5na6 | 1468781831 | juijw2ldiogyem3c | BlockBlob/application/zip | 414fgngli4 | 359512.0 | True | False |
-| ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... |
+| ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... |
 | 1607270691764 | ayi | 1003538042 | 766ofcie | 1080821259 | sfocyrxcksjgri5t | BlockBlob/application/json | tanw2860j5 | 164.0 | True | False |
 | 1607270691884 | ayi | 1003538042 | 766ofcie | 1530317863 | aat6cv8j2cofwj1a | BlockBlob/application/json | gf05emgb6t | 164.0 | True | False |
 | 1607270692007 | ayi | 1003538042 | 766ofcie | 358892311 | u7p02pymm07pa7bg | BlockBlob/application/json | kl2uv31e7y | 164.0 | True | False |

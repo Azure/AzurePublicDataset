@@ -47,7 +47,17 @@ If you do use the Azure Trace for Packing in your research, please make sure to 
   * the distribution of execution times per function
   * the distribution of memory usage per application
 
-If you do use the Azure Functions traces in your research, please make sure to cite our ATC'20 paper ["Serverless in the Wild: Characterizing and Optimizing the Serverless Workload at a Large Cloud Provider"](https://www.microsoft.com/en-us/research/uploads/prod/2020/05/serverless-ATC20.pdf), which includes a full analysis of the Azure Functions workload in July 2019.
+If you do use the Azure Functions 2019 traces in your research, please make sure to cite our ATC'20 paper ["Serverless in the Wild: Characterizing and Optimizing the Serverless Workload at a Large Cloud Provider"](https://www.microsoft.com/en-us/research/uploads/prod/2020/05/serverless-ATC20.pdf), which includes a full analysis of the Azure Functions workload in July 2019.
+
+* [AzureFunctionsInvocationTrace2021](https://github.com/Azure/AzurePublicDataset/blob/master/AzureFunctionsInvocationTrace2021.md) - This is a trace of function invocations for two weeks starting on 2021-01-31. The trace contains invocation arrival and departure (or compeletion) times, with the folloiwng schema:  
+
+  * app: application id (encrypted)
+  * func: function id (encrypted), and unique only within an application 
+  * end_timestamp: function invocation end timestamp in millisecond
+  * duration: duration of function invocation in millisecond
+
+
+If you do use the Azure Functions 2021 trace in your research, please cite this SOSP'21 paper ["Faster and Cheaper Serverless Computing on Harvested Resources"](https://www.microsoft.com/en-us/research/publication/faster-and-cheaper-serverless-computing-on-harvested-resources/).
 
 ### Functions Blob Accesses
 

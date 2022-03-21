@@ -26,8 +26,8 @@ You can download the dataset here:  [**AzureFunctionsInvocationTraceForTwoWeeksJ
 
 - app: application id (encrypted)
 - func: function id (encrypted), and unique only within an application 
-- end_timestamp: function invocation end timestamp in millisecond
-- duration: duration of function invocation in millisecond
+- end_timestamp: function invocation end timestamp (in seconds)
+- duration: duration of function invocation (in seconds)
 
 ### Remarks 
 

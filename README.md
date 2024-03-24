@@ -4,7 +4,8 @@ This repository contains public releases of Microsoft Azure traces for the benef
 There are currently two classes of traces: 
 
 * VM Traces: two representative traces of the virtual machine (VM) workload of Microsoft Azure collected in 2017 and 2019, and one VM request trace specifically for investigating packing algorihtms.
-* Azure Functions Traces: representative traces of Azure Functions invocations, collected over two weeks in 2019, and of Azure Functions blob accesses, collected between November and December of 2020. 
+* Azure Functions Traces: representative traces of Azure Functions invocations, collected over two weeks in 2019, and of Azure Functions blob accesses, collected between November and December of 2020.
+* Azure LLM Inference Traces: representative traces of LLM inference invocations with input and output tokens, collected in November 2023.
 
 We provide the traces as they are, but are willing to help researchers understand and use them. So, please let us know of any issues or questions by sending email to our  [mailing list](mailto:azurepublicdataset@service.microsoft.com).
 
@@ -14,6 +15,7 @@ We provide the traces as they are, but are willing to help researchers understan
 * Traces ([2019](https://github.com/Azure/AzurePublicDataset/blob/master/AzureFunctionsDataset2019.md)) for the paper "Serverless in the Wild: Characterizing and Optimizing the Serverless Workload at a Large Cloud Provider" (ATC'19)
 * Traces ([2020](https://github.com/Azure/AzurePublicDataset/blob/master/AzureTracesForPacking2020.md)) for the paper "Protean: VM Allocation Service at Scale" (OSDI'20)
 * Traces ([2020](https://github.com/Azure/AzurePublicDataset/blob/master/AzureFunctionsBlobDataset2020.md)) for the paper "Faa$T: A Transparent Auto-Scaling Cache for Serverless Applications" (SoCC'21)
+* Traces ([2023](https://github.com/Azure/AzurePublicDataset/blob/master/AzureFunctionsBlobDataset2020.md)) for the paper "Splitwise: Efficient generative LLM inference using phase splitting" (ISCA'24)
 
 ## VM Traces
 
@@ -63,6 +65,9 @@ If you do use the Azure Functions 2021 trace in your research, please cite this 
 
 * [AzureFunctionsBlobDataset2020](https://github.com/Azure/AzurePublicDataset/blob/master/AzureFunctionsBlobDataset2020.md) - This is a sample of the blob accesses in Microsoft's Azure Functions, collected between November 23<sup>rd</sup> and December 6<sup>th</sup> 2020. This dataset is the data described and analyzed in the SoCC 2021 paper 'Faa$T: A Transparent Auto-Scaling Cache for Serverless Applications'.
 
+
+## Azure LLM Inference Traces
+* [AzureLLMInferenceDataset2023](https://github.com/Azure/AzurePublicDataset/blob/master/AzureLLMInferenceDataset2023.md) - This is a sample of two LLM inference services in Azure containing the input and output tokens. This dataset was collected on November 11<sup>th</sup> 2023. This contains the data described and analyzed in the ISCA 2024 paper 'Splitwise: Efficient generative LLM inference using phase splitting'.
 
 ### Contact us
 Please let us know of any issues or questions by sending email to our [mailing list](mailto:azurepublicdataset@service.microsoft.com).

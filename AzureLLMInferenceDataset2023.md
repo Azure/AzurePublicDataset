@@ -19,8 +19,8 @@ Lastly, if you have any questions, comments, or concerns, or if you would like t
 
 ### Downloading
 You can download the datasets here:
-* [Code](data/AzureLLMInferenceTrace_code.md)
-* [Conversation](data/AzureLLMInferenceTrace_conv.md)
+* [Code](data/AzureLLMInferenceTrace_code.csv)
+* [Conversation](data/AzureLLMInferenceTrace_conv.csv)
 
 ### Schema
 |Field|Description |

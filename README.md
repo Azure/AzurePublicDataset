@@ -15,7 +15,8 @@ We provide the traces as they are, but are willing to help researchers understan
 * Traces ([2019](https://github.com/Azure/AzurePublicDataset/blob/master/AzureFunctionsDataset2019.md)) for the paper "Serverless in the Wild: Characterizing and Optimizing the Serverless Workload at a Large Cloud Provider" (ATC'19)
 * Traces ([2020](https://github.com/Azure/AzurePublicDataset/blob/master/AzureTracesForPacking2020.md)) for the paper "Protean: VM Allocation Service at Scale" (OSDI'20)
 * Traces ([2020](https://github.com/Azure/AzurePublicDataset/blob/master/AzureFunctionsBlobDataset2020.md)) for the paper "Faa$T: A Transparent Auto-Scaling Cache for Serverless Applications" (SoCC'21)
-* Traces ([2023](https://github.com/Azure/AzurePublicDataset/blob/master/AzureFunctionsBlobDataset2020.md)) for the paper "Splitwise: Efficient generative LLM inference using phase splitting" (ISCA'24)
+* Traces ([2023](https://github.com/Azure/AzurePublicDataset/blob/master/AzureLLMInferenceDataset2023.md)) for the paper "Splitwise: Efficient generative LLM inference using phase splitting" (ISCA'24)
+* Dataset and code ([2023](AzureGreenSKUFramework2023.md)) for the paper "Designing Cloud Servers for Lower Carbon" (ISCA'24)
 
 ## VM Traces
 
@@ -68,6 +69,9 @@ If you do use the Azure Functions 2021 trace in your research, please cite this 
 
 ## Azure LLM Inference Traces
 * [AzureLLMInferenceDataset2023](https://github.com/Azure/AzurePublicDataset/blob/master/AzureLLMInferenceDataset2023.md) - This is a sample of two LLM inference services in Azure containing the input and output tokens. This dataset was collected on November 11<sup>th</sup> 2023. This contains the data described and analyzed in the ISCA 2024 paper 'Splitwise: Efficient generative LLM inference using phase splitting'.
+
+## GreenSKU Framework
+* [GreenSKU Framework 2023](AzureGreenSKUFramework2023.md) - This contains code and parameters to estimate carbon emission impacts from introducing GreenSKU compute servers into a cloud. This contains code and public parameters described in the ISCA 2024 paper 'Designing Cloud Servers for Lower Carbon'.
 
 ### Contact us
 Please let us know of any issues or questions by sending email to our [mailing list](mailto:azurepublicdataset@service.microsoft.com).

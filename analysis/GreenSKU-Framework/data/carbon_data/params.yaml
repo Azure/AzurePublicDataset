@@ -1,0 +1,9 @@
+lifetime: 72                            # in months (set based on Azure server lifetimes)
+voltage_regulator_overhead: 1.05        # from here: https://www.digikey.com/en/articles/understanding-the-advantages-and-disadvantages-of-linear-regulators
+PSU_efficiency: 0.95                    # from here: https://help.corsair.com/hc/en-us/articles/14641912717453-PSU-Efficiency-Ratings-Explained 
+emissions_factor: 0.35                  # in kgCO2/kWh - will often be set per model run
+PUE: 1.12                               # from here: https://azure.microsoft.com/en-us/blog/how-microsoft-measures-datacenter-water-and-energy-use-to-improve-azure-cloud-sustainability/
+power_factor: 0.66                      # from here: https://www.microsoft.com/en-us/research/publication/smartoclock-workload-and-risk-aware-overclocking-in-the-cloud/
+fan_slope: 0.17869227                   # derived from data from here: https://www.servethehome.com/deep-dive-into-lowering-server-power-consumption-intel-inspur-hpe-dell-emc/
+2U_server_base: 300                     # estimated from server configurations (will normally be overwritten)
+1U_server_base: 250                     # estimated from server configurations (will normally be overwritten)

@@ -1,0 +1,7 @@
+types:
+  default:
+    power: 5.8W           # Estimated from: https://www.broadcom.com/products/pcie-switches-retimers/pcie-switches/pex8732
+    dimms_per_channel: 2
+    channels: 4
+    carbon: 2.47          # Estimated using ACT + 28nm and https://ww1.microchip.com/downloads/aemDocuments/documents/DCS/ProductDocuments/Brochures/SMC-2000-Smart-Memory-Controllers-00004551.pdf 
+spec_derates: {10: 0.2, 20: 0.28, 30: 0.36, 40: 0.44, 50: 0.53, 60: 0.62, 70: 0.7, 80: 0.79, 90: 0.88, 100: 0.95}

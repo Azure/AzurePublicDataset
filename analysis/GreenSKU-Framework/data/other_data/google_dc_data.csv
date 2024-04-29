@@ -1,0 +1,9 @@
+Region,Renewable %,Avg Grid Intensity,Avg Renewable Intensity,CI
+europe-west1,80,172,27.67,0.056536
+us-east1,26,460,27.67,0.3475942
+us-south1,41,388,27.67,0.2402647
+us-central1,96,443,27.67,0.0442832
+europe-north1,97,89,27.67,0.0295099
+us-west1,89,234,27.67,0.0503663
+us-west2,56,240,27.67,0.1210952
+us-east5,60,397,27.67,0.175402

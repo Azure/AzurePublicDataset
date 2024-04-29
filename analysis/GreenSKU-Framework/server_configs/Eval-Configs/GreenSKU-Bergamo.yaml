@@ -1,0 +1,37 @@
+server:
+  name: Bergamo
+  cpu:
+    vendor: AMD
+    type: Bergamo
+    number: 1
+    core_count: 128
+  memory:
+    type: DDR5
+    number: 12
+    size: 96GB
+    overhead: 0.0
+    frequency: 4800MHz
+  cxl:
+    type: DDR4
+    number: 0
+    size: 32GB
+    controller: default
+    frequency: 2400MHz
+  ssd:
+    type: E1.S
+    number: 5
+    size: 4TB
+  nic:
+    bandwidth: 100G
+    number: 1
+  rack:
+    type: Rack
+    number: 1
+    power: 30kW
+    capacity: 42U
+    spec_allocation: 50
+    num_servers: 0
+  type: Server-1U
+  spec: 40
+  form: 1U
+  sockets: 1

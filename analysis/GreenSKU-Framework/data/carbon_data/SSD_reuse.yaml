@@ -1,0 +1,6 @@
+- type: E1.S
+  sizes:
+    - size: 1TB
+      power: 5.6W   # From: https://www.seagate.com/esg/planet/product-sustainability/nytro-3530-sustainability-report/ 
+      carbon: 0     # reused so no embodied carbon
+  spec_derates: {10: 0.2, 20: 0.28, 30: 0.36, 40: 0.44, 50: 0.53, 60: 0.62, 70: 0.7, 80: 0.79, 90: 0.88, 100: 0.95}

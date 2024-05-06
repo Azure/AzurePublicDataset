@@ -1,0 +1,14 @@
+- vendor: AMD
+  types:
+    - type: Genoa
+      core_counts:
+        - count: 80
+          power: 290W   # https://www.tomshardware.com/reviews/amd-4th-gen-epyc-genoa-9654-9554-and-9374f-review-96-cores-zen-4-and-5nm-disrupt-the-data-center
+          carbon: 30.7  # calculated with ACT 5nm + area estimations from https://wccftech.com/amd-epyc-genoa-zen-4-cpu-pictured-in-all-its-glory-12-ccds-featuring-up-to-96-cores-massive-iod/
+    - type: Bergamo
+      core_counts:
+        - count: 128
+          power: 400W   # https://www.phoronix.com/review/amd-epyc-9754-bergamo#:~:text=The%20EPYC%209754%20has%20a%20default%20TDP%20of%20360%20Watts,of%20320%20to%20400%20Watts
+          carbon: 28.3  # calculated with ACT 5nm + area estimations from https://wccftech.com/amd-epyc-genoa-zen-4-cpu-pictured-in-all-its-glory-12-ccds-featuring-up-to-96-cores-massive-iod/
+  spec_derates: {10: 0.2, 20: 0.28, 30: 0.36, 40: 0.44, 50: 0.53, 60: 0.62, 70: 0.7, 80: 0.79, 90: 0.88, 100: 0.95} # from https://dl.acm.org/doi/abs/10.1145/3185768.3185775
+

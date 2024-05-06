@@ -1,0 +1,12 @@
+# ALL DATA FROM https://www.usenix.org/conference/osdi23/presentation/lyu
+DRAM:
+  AFR: 0.1
+  reuse_AFR: 0.1
+  FIP_rate: 0.75
+SSD:
+  AFR: 0.2
+  reuse_AFR: 0.2
+  FIP_rate: 0.75
+Rest:
+  AFR: 2.4
+  FIP_rate: 0

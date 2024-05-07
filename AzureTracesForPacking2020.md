@@ -23,7 +23,7 @@ Lastly, if you have any questions, comments, or concerns, or if you would like t
 
 ### Downloading
 
-You can download the dataset here: https://azurecloudpublicdataset2.blob.core.windows.net/azurepublicdatasetv2/azurevmallocation_dataset2020/AzurePackingTraceV1.zip 
+You can download the dataset here: https://azurecloudpublicdataset2.z19.web.core.windows.net/azurepublicdatasetv2/azurevmallocation_dataset2020/AzurePackingTraceV1.zip 
 
 ## Schema and Description
 

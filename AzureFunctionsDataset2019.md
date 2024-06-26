@@ -29,7 +29,7 @@ Lastly, if you have any questions, comments, or concerns, or if you would like t
 
 ### Downloading
 
-You can download the dataset here: https://azurecloudpublicdataset2.z19.web.core.windows.net/azurepublicdatasetv2/azurefunctions_dataset2019/azurefunctions-dataset2019.tar.xz 
+You can download the dataset here: https://azurepublicdatasettraces.blob.core.windows.net/azurepublicdatasetv2/azurefunctions_dataset2019/azurefunctions-dataset2019.tar.xz 
 
 ## Schema and Description
 ### Function Invocation Counts

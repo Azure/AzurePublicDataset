@@ -1,0 +1,9 @@
+- type: DC
+  items:
+    dc_building:
+      number: 1
+      power: 0W               # Lump sum estimate from Azure
+      carbon: 9000000         # kg co2 - lump estimate
+      lifetime: 240           # 20 years in months
+  rack_capacity: 2500         # Azure estimate
+  power_capacity: 50MW        # Azure estimate

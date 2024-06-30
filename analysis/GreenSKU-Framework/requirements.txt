@@ -1,0 +1,12 @@
+ruamel.yaml
+numpy
+pandas
+matplotlib
+pathlib
+scipy
+ipykernel
+notebook
+tabulate
+seaborn
+jupyterlab
+chardet

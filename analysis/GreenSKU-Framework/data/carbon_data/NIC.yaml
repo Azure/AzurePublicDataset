@@ -1,0 +1,5 @@
+bandwidths:
+  - bandwidth: 100G
+    power: 19W      # From: https://www.microsoft.com/en-us/research/publication/azure-accelerated-networking-smartnics-public-cloud/
+    carbon: 58.09   # From: https://arxiv.org/pdf/2311.12396.pdf
+spec_derates: {10: 0.2, 20: 0.28, 30: 0.36, 40: 0.44, 50: 0.53, 60: 0.62, 70: 0.7, 80: 0.79, 90: 0.88, 100: 0.95}

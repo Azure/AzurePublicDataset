@@ -1,0 +1,40 @@
+server:
+  name: Baseline-Resized
+  cpu:
+    vendor: AMD
+    type: Genoa
+    number: 1
+    core_count: 80
+  memory:
+    type: DDR5
+    number: 10
+    size: 64GB
+    overhead: 0.0
+    frequency: 4800MHz
+  cxl:
+    type: DDR4
+    number: 0
+    size: 32GB
+    controller: default
+    frequency: 2400MHz
+  ssd:
+    type: E1.S
+    number: 6
+    size: 2TB
+  nic:
+    bandwidth: 100G
+    number: 1
+  rack:
+    type: Rack
+    number: 1
+    power: 15kW
+    capacity: 42U
+    spec_allocation: 50
+    num_servers: 0
+  dc:
+    type: DC
+    number: 1
+  type: Server-1U
+  form: 1U
+  spec: 40
+  sockets: 1

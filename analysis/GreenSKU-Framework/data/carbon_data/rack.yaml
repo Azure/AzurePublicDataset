@@ -1,0 +1,8 @@
+- type: Rack
+  items:
+    rack:
+      number: 1
+      power: 500W   # Lump sum estimate from Azure
+      capacity: 10  # Lump estimate
+      carbon: 500   # Lump estimate
+      lifetime: 180 # Physical rack lifetime estimate in months (15 years) - from Azure

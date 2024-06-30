@@ -1,0 +1,23 @@
+- type: Server-1U
+  items: 
+    server:
+      number: 1
+      power: 35W        # Lump sum Azure estimate
+      carbon: 350       # Lump sum Azure estimate
+    fan:
+      number: 1
+      power: 75W        # From: https://www.techtarget.com/searchdatacenter/tip/Optimizing-server-energy-efficiency#:~:text=For%20example%2C%20if%20the%20server,rises%20in%20the%20data%20center
+      carbon: 1.0598    # 2/3 of the 2U number (4 vs 6 fans)
+      spec_derates: {10: 0.2, 20: 0.28, 30: 0.36, 40: 0.44, 50: 0.53, 60: 0.62, 70: 0.7, 80: 0.79, 90: 0.88, 100: 0.95}
+
+- type: Server-2U
+  items: 
+    server:
+      number: 1
+      power: 35W        # Lump sum Azure estimate
+      carbon: 375       # Lump sum Azure estimate
+    fan:
+      number: 1
+      power: 112.5W     # 1.5x of the 2U power
+      carbon: 1.5897    # From Dell LCA
+      spec_derates: {10: 0.2, 20: 0.28, 30: 0.36, 40: 0.44, 50: 0.53, 60: 0.62, 70: 0.7, 80: 0.79, 90: 0.88, 100: 0.95}

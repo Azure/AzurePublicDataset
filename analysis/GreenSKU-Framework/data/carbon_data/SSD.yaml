@@ -1,0 +1,9 @@
+- type: E1.S
+  sizes:
+    - size: 2TB
+      power: 11.2W    # From: https://www.seagate.com/esg/planet/product-sustainability/nytro-3530-sustainability-report/ 
+      carbon: 34.65   # From: https://www.seagate.com/esg/planet/product-sustainability/nytro-3530-sustainability-report/ 
+    - size: 4TB
+      power: 16.8W    # From: https://www.seagate.com/esg/planet/product-sustainability/nytro-3530-sustainability-report/ 
+      carbon: 69.3    # From: https://www.seagate.com/esg/planet/product-sustainability/nytro-3530-sustainability-report/ 
+  spec_derates: {10: 0.2, 20: 0.28, 30: 0.36, 40: 0.44, 50: 0.53, 60: 0.62, 70: 0.7, 80: 0.79, 90: 0.88, 100: 0.95}

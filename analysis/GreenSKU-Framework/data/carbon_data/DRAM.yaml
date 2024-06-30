@@ -1,0 +1,20 @@
+DDR5:
+  frequencies:
+    - frequency: 4800MHz
+      sizes:
+        - size: 64GB
+          power: 23.68W   # From: https://www.tomshardware.com/reviews/intel-core-i7-5960x-haswell-e-cpu,3918-13.html
+          carbon: 105.4   # from Dell LCA
+        - size: 96GB
+          power: 35.52W   # From: https://www.tomshardware.com/reviews/intel-core-i7-5960x-haswell-e-cpu,3918-13.html
+          carbon: 158.1   # from Dell LCA
+  spec_derates: {10: 0.2, 20: 0.28, 30: 0.36, 40: 0.44, 50: 0.53, 60: 0.62, 70: 0.7, 80: 0.79, 90: 0.88, 100: 0.95}
+
+DDR4:
+  frequencies:
+    - frequency: 2400MHz
+      sizes:
+        - size: 32GB
+          power: 11.85W    # From: https://www.tomshardware.com/reviews/intel-core-i7-5960x-haswell-e-cpu,3918-13.html
+          carbon: 0        # reused so no embodied carbon
+  spec_derates: {10: 0.2, 20: 0.28, 30: 0.36, 40: 0.44, 50: 0.53, 60: 0.62, 70: 0.7, 80: 0.79, 90: 0.88, 100: 0.95}

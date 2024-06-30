@@ -16,6 +16,7 @@ We provide the traces as they are, but are willing to help researchers understan
 * Traces ([2020](https://github.com/Azure/AzurePublicDataset/blob/master/AzureTracesForPacking2020.md)) for the paper "Protean: VM Allocation Service at Scale" (OSDI'20)
 * Traces ([2020](https://github.com/Azure/AzurePublicDataset/blob/master/AzureFunctionsBlobDataset2020.md)) for the paper "Faa$T: A Transparent Auto-Scaling Cache for Serverless Applications" (SoCC'21)
 * Traces ([2023](https://github.com/Azure/AzurePublicDataset/blob/master/AzureLLMInferenceDataset2023.md)) for the paper "Splitwise: Efficient generative LLM inference using phase splitting" (ISCA'24)
+* Dataset and code ([2023](AzureGreenSKUFramework2023.md)) for the paper "Designing Cloud Servers for Lower Carbon" (ISCA'24)
 
 ## VM Traces
 

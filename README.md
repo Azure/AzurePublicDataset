@@ -69,6 +69,7 @@ If you do use the Azure Functions 2021 trace in your research, please cite this 
 
 ## Azure LLM Inference Traces
 * [AzureLLMInferenceDataset2023](https://github.com/Azure/AzurePublicDataset/blob/master/AzureLLMInferenceDataset2023.md) - This is a sample of two LLM inference services in Azure containing the input and output tokens. This dataset was collected on November 11<sup>th</sup> 2023. This contains the data described and analyzed in the ISCA 2024 paper 'Splitwise: Efficient generative LLM inference using phase splitting'.
+* [AzureLLMInferenceDataset2024](https://github.com/Azure/AzurePublicDataset/blob/master/AzureLLMInferenceDataset2024.md) - This is a longer one week sample of two LLM inference services in Azure containing the input and output tokens. This dataset was collected on May 2024. This contains the data described and analyzed in the arxiv paper 'DynamoLLM: Designing LLM Inference Clusters for Performance and Energy Efficiency'.
 
 ### Contact us
 Please let us know of any issues or questions by sending email to our [mailing list](mailto:azurepublicdataset@service.microsoft.com).

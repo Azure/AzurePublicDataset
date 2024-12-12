@@ -5,7 +5,7 @@ There are currently two classes of traces:
 
 * VM Traces: two representative traces of the virtual machine (VM) workload of Microsoft Azure collected in 2017 and 2019, and one VM request trace specifically for investigating packing algorihtms.
 * Azure Functions Traces: representative traces of Azure Functions invocations, collected over two weeks in 2019, and of Azure Functions blob accesses, collected between November and December of 2020.
-* Azure LLM Inference Traces: representative traces of LLM inference invocations with input and output tokens, collected on November 2023.
+* Azure LLM Inference Traces: representative traces of LLM inference invocations with input and output tokens, collected on November 2023 and May 2024.
 
 We provide the traces as they are, but are willing to help researchers understand and use them. So, please let us know of any issues or questions by sending email to our  [mailing list](mailto:azurepublicdataset@service.microsoft.com).
 
@@ -17,6 +17,7 @@ We provide the traces as they are, but are willing to help researchers understan
 * Traces ([2020](https://github.com/Azure/AzurePublicDataset/blob/master/AzureFunctionsBlobDataset2020.md)) for the paper "Faa$T: A Transparent Auto-Scaling Cache for Serverless Applications" (SoCC'21)
 * Traces ([2023](https://github.com/Azure/AzurePublicDataset/blob/master/AzureLLMInferenceDataset2023.md)) for the paper "Splitwise: Efficient generative LLM inference using phase splitting" (ISCA'24)
 * Dataset and code ([2023](AzureGreenSKUFramework2023.md)) for the paper "Designing Cloud Servers for Lower Carbon" (ISCA'24)
+* Traces ([2024](https://github.com/Azure/AzurePublicDataset/blob/master/AzureLLMInferenceDataset2024.md)) for the paper "DynamoLLM: Designing LLM Inference Clusters for Performance and Energy Efficiency" (HPCA'25)
 
 ## VM Traces
 

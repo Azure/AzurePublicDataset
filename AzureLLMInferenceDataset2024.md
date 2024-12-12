@@ -1,7 +1,9 @@
 # Azure LLM inference trace 2024
 
 ## Introduction
-This is a sample of the traces from multiple LLM inference services in Azure, collected on May 10<sup>th</sup>-19<sup>th</sup> 2024. This dataset is the data described and analyzed in the arxiv paper 'DynamoLLM: Designing LLM Inference Clusters for Performance and Energy Efficiency'.
+This is a sample of the traces from multiple LLM inference services in Azure, collected on May 10<sup>th</sup>-19<sup>th</sup> 2024. This dataset is the data described and analyzed in the HPCA 2025 paper 'DynamoLLM: Designing LLM Inference Clusters for Performance and Energy Efficiency'.
+
+The dataset comprises this description and a [Jupyter Notebook](https://github.com/Azure/AzurePublicDataset/blob/master/analysis/AzureLLMInferenceDataset2024.ipynb) with the plots in the HPCA paper.
 
 ## Using the data
 
@@ -11,13 +13,14 @@ The data is made available and licensed under a [CC-BY Attribution License](http
 ### Attribution
 If you use this data for a publication or project, please cite the accompanying paper:
 
-> Jovan Stojkovic, Chaojie Zhang, Íñigo Goiri, Josep Torrellas, Esha Choukse. "[**DynamoLLM: Designing LLM Inference Clusters for Performance and Energy Efficiency**](https://arxiv.org/abs/2408.00741)", in arxiv. 
+> Jovan Stojkovic, Chaojie Zhang, Íñigo Goiri, Josep Torrellas, Esha Choukse. "[**DynamoLLM: Designing LLM Inference Clusters for Performance and Energy Efficiency**](https://arxiv.org/abs/2408.00741)", in Proceedings of the International Symposium on High-Performance Computer Architecture (HPCA 2025). IEEE, Las Vegas, USA, 2025. 
 
 Lastly, if you have any questions, comments, or concerns, or if you would like to share tools for working with the traces, please contact us at azurepublicdataset@service.microsoft.com 
 
 ### Downloading
 You can download the datasets here:
 * [Code](https://azurepublicdatasettraces.blob.core.windows.net/azurellminfererencetrace/AzureLLMInferenceTrace_code_1week.csv)
+* [Conversation](https://azurepublicdatasettraces.blob.core.windows.net/azurellminfererencetrace/AzureLLMInferenceTrace_conv_1week.csv)
 
 ### Schema
 |Field|Description |
@@ -31,4 +34,4 @@ Due to customer privacy requirements (e.g., GDPR), we do not have visibility int
 and force the model to generate the corresponding number of output tokens for each request. Note that the text of the inputs prompts does not impact the performance metrics that we benchmark, since they depend only on the input and output sizes.
 
 ### Validation
-This data is the sample data used in the arxiv paper mentioned above.
+This data is the sample data used in the HPCA paper mentioned above.

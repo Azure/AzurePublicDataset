@@ -18,6 +18,7 @@ We provide the traces as they are, but are willing to help researchers understan
 * Traces ([2023](https://github.com/Azure/AzurePublicDataset/blob/master/AzureLLMInferenceDataset2023.md)) for the paper "Splitwise: Efficient generative LLM inference using phase splitting" (ISCA'24)
 * Dataset and code ([2023](AzureGreenSKUFramework2023.md)) for the paper "Designing Cloud Servers for Lower Carbon" (ISCA'24)
 * Traces ([2024](https://github.com/Azure/AzurePublicDataset/blob/master/AzureLLMInferenceDataset2024.md)) for the paper "DynamoLLM: Designing LLM Inference Clusters for Performance and Energy Efficiency" (HPCA'25)
+* Benchmarks
 
 ## VM Traces
 

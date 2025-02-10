@@ -5,7 +5,8 @@
 ## Introduction
 
 This directory contains a set of files representing a collection of benchmarks run on Microsoft Azure Virtual Machine offerings (`D8s_v5` and `B8ms`) over a period of around 483 days from `2023-05-28` to `2024-09-23`.
-This dataset is the data that is described in, and analyzed in the EuroSys 2025 paper 'TUNA: Tuning Unstable and Noisy Cloud Applications'.
+We used [SSDv2 Disks](https://learn.microsoft.com/en-us/azure/virtual-machines/disks-types#premium-ssd-v2) as the "remote disk", and a [Premium SSDs](https://learn.microsoft.com/en-us/azure/virtual-machines/disks-types#premium-ssds) as the "local disk" in the tests.
+This dataset is the data that is described in, and analyzed in the EuroSys 2025 paper [TUNA: Tuning Unstable and Noisy Cloud Applications](https://www.microsoft.com/en-us/research/publication/tuna-tuning-unstable-and-noisy-cloud-applications/).
 A set of benchmarks were used to attempt to cover the main components in the VM, with the exception of the network: Cache, CPU, Disk, Memory, OS.
 Additionally, two end to end applications were also benchmarked: PostgreSQL and Redis.
 
@@ -33,7 +34,9 @@ The data is made available and licensed under a [CC-BY Attribution License](http
 
 If you use this data for a publication or project, please cite the accompanying paper:
 
-> Johannes Freischuetz, Konstantinos Kanellis, Brian Kroth, and Shivaram Venkataraman. 2025. [TUNA: Tuning Unstable and Noisy Cloud Applications](https://2025.eurosys.org/accepted-papers.html). In Proceedings of the Twentieth European Conference on Computer Systems (EuroSys '25). Association for Computing Machinery, New York, NY, USA
+> Johannes Freischuetz, Konstantinos Kanellis, Brian Kroth, and Shivaram Venkataraman. 2025. [TUNA: Tuning Unstable and Noisy Cloud Applications](https://www.microsoft.com/en-us/research/publication/tuna-tuning-unstable-and-noisy-cloud-applications/). In Proceedings of the Twentieth European Conference on Computer Systems (EuroSys '25). Association for Computing Machinery, New York, NY, USA
+
+> @inproceedings {TUNA, author = {Johannes Freischuetz and Konstantinos Kanellis and Brian Kroth, and Shivaram Venkataraman}, title = {TUNA: Tuning Unstable and Noisy Cloud Applications}, booktitle = {EuroSys '25: Proceedings of the Nineteenth European Conference on Computer Systems}, publisher = {Association for Computing Machinery}, address = {New York, NY, USA}, year={2025}, month = {mar}}
 
 We provide the traces as they are, but are willing to help researchers understand and use them. So, please let us know of any issues or questions by sending email to our  [mailing list](mailto:azurepublicdataset@service.microsoft.com).
 
@@ -47,7 +50,7 @@ You can download the dataset here:  [**vm-noise-data**](https://github.com/Azure
 
 * 1 file per measurement unit, partitioned using Hive style table partitioning layout:
 
-`test_suite=<test_suite>/test_name=<test_name>/vm_lifespan=<short|long>/vm_region=<region>/vm_sku=<sku>/unit=<unit>.csv`
+`test_suite=<test_suite>/test_name=<test_name>/vm_lifespan=<short|long>/vm_region=(eastus|westus2)/vm_sku=(B8ms|D8s_v5)/unit=<unit>.csv`
 
 ### Schema
 
@@ -82,7 +85,7 @@ These metrics were collected from VMs in 3 dimensions:
 
     Short running VMs were only ran each benchmark one time before being reallocated.
 
-    The purpose of this dimension is to influence which backend host the VM was assigned to in order to increase samples across different backend hosts.
+    The purpose of this dimension is to influence which backend host the VM was assigned to in order to increase samples across different backend hosts. While we omit host information, short lived VMs were mostly place on distinct hosts, and long lived VMs had almost no migrations.
 
 2. VM SKU
 
@@ -100,7 +103,16 @@ There were three VMs allocated for each combination of VM dimensions.
 
 The benchmarks used came from the following suites:
 
-*TODO (with links and metrics descriptions)*
+| Suite | Benchmarks | Description |
+|---|---|---|
+| Flexible IO Tester | Random Read <br> Random Write <br> Sequential Read <br> Sequential Write | Test the throughput in MiB/s and IOPS, and the latency of various disk operations |
+| Intel Memory Latency Checker | Idle Latency Max Bandwidth and Peak Injeciton Bandwidth: <br> - All reads <br> - 1:1 read <br> - write ratio <br> - 2:1 read <br> - write ratio <br> - 3:1 read <br> - write ratio <br> - stream-triad like | Test throughput of various memory operations |
+| OS Bench | Create Files <br> Create Processes <br> Create Threads <br> Launch Programs <br> Memory Allocations | Measure latency for various OS related operations |
+| perf-bench | Epoll Wait <br> Memcpy <br> Memset <br> Syscall Basic | Measure other OS related operations |
+| PostgreSQL | All combinations of the following: <br> Scaling Factor: 25 / 2500 <br> Client: 1 / 25 <br> Mode: Read Only / Read Write from pgbench | Measure various workload combinations using pgbench |
+| Redis | redis-benchmark tests for the following: <br> - GET <br> - LPOP <br> - LPUSH <br> - SADD <br> - SET | Benchmark various redis operations using redis-benchmark |
+| stress-ng | CPU_Cache <br> CPU Stress <br> Matrix Math <br> Memory Copy | Benchmark the CPU, and one memory benchmark |
+| Sysbench | CPU <br> RAM Memory | Benchmark CPU and Benchmark |
 
 During each iteration, the full set of benchmarks were run in a random order with a random splay between each benchmark.
 

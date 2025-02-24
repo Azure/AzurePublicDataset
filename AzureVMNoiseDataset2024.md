@@ -85,7 +85,7 @@ You can download the dataset here:  [**vm-noise-data**](https://github.com/Azure
 
 ### Sample Code
 
-Some sample code for using this data in a notebook can be found in [`vm-noise-data/sample.ipynb`](https://github.com/Azure/AzurePublicDataset/raw/master/vm-noise-data/sample.ipynb)
+Some sample code for using this data in a notebook can be found in [`vm-noise-data/sample.ipynb`](https://github.com/Azure/AzurePublicDataset/tree/master/vm-noise-data/sample.ipynb)
 
 #### Description
 

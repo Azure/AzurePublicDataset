@@ -36,9 +36,14 @@ If you use this data for a publication or project, please cite the accompanying 
 
 > Johannes Freischuetz, Konstantinos Kanellis, Brian Kroth, and Shivaram Venkataraman. 2025. [TUNA: Tuning Unstable and Noisy Cloud Applications](https://www.microsoft.com/en-us/research/publication/tuna-tuning-unstable-and-noisy-cloud-applications/). In Proceedings of the Twentieth European Conference on Computer Systems (EuroSys '25). Association for Computing Machinery, New York, NY, USA
 
-&#96;&#96;&#96;bibtex
-@inproceedings {TUNA, author = {Johannes Freischuetz and Konstantinos Kanellis and Brian Kroth, and Shivaram Venkataraman}, title = {TUNA: Tuning Unstable and Noisy Cloud Applications}, booktitle = {EuroSys '25: Proceedings of the Nineteenth European Conference on Computer Systems}, publisher = {Association for Computing Machinery}, address = {New York, NY, USA}, year={2025}, month = {mar}}
-&#96;&#96;&#96;
+```bibtex
+@inproceedings {TUNA,
+  author = {Johannes Freischuetz and Konstantinos Kanellis and Brian Kroth, and Shivaram Venkataraman},
+  title = {TUNA: Tuning Unstable and Noisy Cloud Applications},
+  booktitle = {EuroSys '25: Proceedings of the Nineteenth European Conference on Computer Systems},
+  publisher = {Association for Computing Machinery}, address = {New York, NY, USA}, year={2025}, month = {mar}
+}
+```
 
 We provide the traces as they are, but are willing to help researchers understand and use them. So, please let us know of any issues or questions by sending email to our  [mailing list](mailto:azurepublicdataset@service.microsoft.com).
 
@@ -52,12 +57,11 @@ You can download the dataset here:  [**vm-noise-data**](https://github.com/Azure
 
 * 1 file per measurement unit, partitioned using Hive style table partitioning layout:
 
+  ```txt
+  test_suite=<test_suite>/test_name=<test_name>/vm_lifespan=(short|long)/vm_region=(eastus|westus2)/vm_sku=(B8ms|D8s_v5)/unit=<unit>.csv
+  ```
 
-&#96;&#96;&#96;txt
-test_suite=<test_suite>/test_name=<test_name>/vm_lifespan=(short|long)/vm_region=(eastus|westus2)/vm_sku=(B8ms|D8s_v5)/unit=<unit>.csv
-&#96;&#96;&#96;
-
-Where `test_suite` and `test_name` can be taken from the table in the [benchmarks](#benchmarks) section below.
+  Where `test_suite` and `test_name` can be taken from the table in the [benchmarks](#benchmarks) section below.
 
 ### Schema
 
@@ -77,6 +81,7 @@ Where `test_suite` and `test_name` can be taken from the table in the [benchmark
 |5101.0|33.22|2024-05-20 01:44:24.070|2|
 
 ### Sample Code
+
 Some sample code for using this data in a notebook can be found in [```vm-noise-data/sample.ipynb```](https://github.com/Azure/AzurePublicDataset/raw/master/data/vm-noise-data/sample.ipynb)
 
 #### Description

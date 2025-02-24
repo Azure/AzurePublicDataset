@@ -75,6 +75,7 @@ Where `test_suite` and `test_name` can be taken from the table in the [benchmark
 |5101.0|33.22|2024-05-20 01:44:24.070|2|
 
 ### Sample Code
+
 ```
 import pandas as pd
 df = pd.read_csv("<target_trace>")

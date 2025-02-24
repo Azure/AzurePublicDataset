@@ -34,7 +34,10 @@ The data is made available and licensed under a [CC-BY Attribution License](http
 
 If you use this data for a publication or project, please cite the accompanying paper:
 
-> Johannes Freischuetz, Konstantinos Kanellis, Brian Kroth, and Shivaram Venkataraman. 2025. [TUNA: Tuning Unstable and Noisy Cloud Applications](https://www.microsoft.com/en-us/research/publication/tuna-tuning-unstable-and-noisy-cloud-applications/). In Proceedings of the Twentieth European Conference on Computer Systems (EuroSys '25). Association for Computing Machinery, New York, NY, USA
+> Johannes Freischuetz, Konstantinos Kanellis, Brian Kroth, and Shivaram Venkataraman. 2025. \
+> [TUNA: Tuning Unstable and Noisy Cloud Applications](https://www.microsoft.com/en-us/research/publication/tuna-tuning-unstable-and-noisy-cloud-applications/). \
+> In Proceedings of the Twentieth European Conference on Computer Systems (EuroSys '25). \
+> Association for Computing Machinery, New York, NY, USA
 
 ```bibtex
 @inproceedings {TUNA,
@@ -49,7 +52,7 @@ We provide the traces as they are, but are willing to help researchers understan
 
 ### Downloading
 
-You can download the dataset here:  [**vm-noise-data**](https://github.com/Azure/AzurePublicDataset/raw/master/data/vm-noise-data).
+You can download the dataset here:  [**vm-noise-data**](https://github.com/Azure/AzurePublicDataset/tree/master/vm-noise-data).
 
 ## Schema and Description
 
@@ -82,7 +85,7 @@ You can download the dataset here:  [**vm-noise-data**](https://github.com/Azure
 
 ### Sample Code
 
-Some sample code for using this data in a notebook can be found in [```vm-noise-data/sample.ipynb```](https://github.com/Azure/AzurePublicDataset/raw/master/data/vm-noise-data/sample.ipynb)
+Some sample code for using this data in a notebook can be found in [`vm-noise-data/sample.ipynb`](https://github.com/Azure/AzurePublicDataset/raw/master/vm-noise-data/sample.ipynb)
 
 #### Description
 

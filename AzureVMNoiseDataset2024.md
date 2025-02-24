@@ -105,7 +105,7 @@ The benchmarks used came from the following suites:
 
 | Suite | Benchmarks | Description |
 |---|---|---|
-| Flexible IO Tester | Random Read <br> Random Write <br> Sequential Read <br> Sequential Write | Test the throughput in MiB/s and IOPS, and the latency of various disk operations |
+| Flexible IO Tester | (Random Read) <br> Random Write <br> Sequential Read <br> Sequential Write | Test the throughput in MiB/s and IOPS, and the latency of various disk operations |
 | Intel Memory Latency Checker | Idle Latency Max Bandwidth and Peak Injeciton Bandwidth: <br> - All reads <br> - 1:1 read <br> - write ratio <br> - 2:1 read <br> - write ratio <br> - 3:1 read <br> - write ratio <br> - stream-triad like | Test throughput of various memory operations |
 | OS Bench | Create Files <br> Create Processes <br> Create Threads <br> Launch Programs <br> Memory Allocations | Measure latency for various OS related operations |
 | perf-bench | Epoll Wait <br> Memcpy <br> Memset <br> Syscall Basic | Measure other OS related operations |

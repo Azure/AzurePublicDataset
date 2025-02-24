@@ -36,7 +36,9 @@ If you use this data for a publication or project, please cite the accompanying 
 
 > Johannes Freischuetz, Konstantinos Kanellis, Brian Kroth, and Shivaram Venkataraman. 2025. [TUNA: Tuning Unstable and Noisy Cloud Applications](https://www.microsoft.com/en-us/research/publication/tuna-tuning-unstable-and-noisy-cloud-applications/). In Proceedings of the Twentieth European Conference on Computer Systems (EuroSys '25). Association for Computing Machinery, New York, NY, USA
 
-> @inproceedings {TUNA, author = {Johannes Freischuetz and Konstantinos Kanellis and Brian Kroth, and Shivaram Venkataraman}, title = {TUNA: Tuning Unstable and Noisy Cloud Applications}, booktitle = {EuroSys '25: Proceedings of the Nineteenth European Conference on Computer Systems}, publisher = {Association for Computing Machinery}, address = {New York, NY, USA}, year={2025}, month = {mar}}
+&#96;&#96;&#96;bibtex
+@inproceedings {TUNA, author = {Johannes Freischuetz and Konstantinos Kanellis and Brian Kroth, and Shivaram Venkataraman}, title = {TUNA: Tuning Unstable and Noisy Cloud Applications}, booktitle = {EuroSys '25: Proceedings of the Nineteenth European Conference on Computer Systems}, publisher = {Association for Computing Machinery}, address = {New York, NY, USA}, year={2025}, month = {mar}}
+&#96;&#96;&#96;
 
 We provide the traces as they are, but are willing to help researchers understand and use them. So, please let us know of any issues or questions by sending email to our  [mailing list](mailto:azurepublicdataset@service.microsoft.com).
 

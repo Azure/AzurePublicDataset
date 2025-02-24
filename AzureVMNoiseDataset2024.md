@@ -69,6 +69,12 @@ You can download the dataset here:  [**vm-noise-data**](https://github.com/Azure
 |5096.0|33.23|2024-05-20 00:43:05.260|2|
 |5101.0|33.22|2024-05-20 01:44:24.070|2|
 
+### Sample Code
+```
+import pandas as pd
+df = pd.read_csv("<target_trace>")
+```
+
 #### Description
 
 This benchmarking data was collected from `2023-05-28` to `2024-09-23` for a set of VMs and organized using the hive partitioning layout.
@@ -105,14 +111,14 @@ The benchmarks used came from the following suites:
 
 | Suite | Benchmarks | Description |
 |---|---|---|
-| Flexible IO Tester | (Random Read) <br> Random Write <br> Sequential Read <br> Sequential Write | Test the throughput in MiB/s and IOPS, and the latency of various disk operations |
-| Intel Memory Latency Checker | Idle Latency Max Bandwidth and Peak Injeciton Bandwidth: <br> - All reads <br> - 1:1 read <br> - write ratio <br> - 2:1 read <br> - write ratio <br> - 3:1 read <br> - write ratio <br> - stream-triad like | Test throughput of various memory operations |
-| OS Bench | Create Files <br> Create Processes <br> Create Threads <br> Launch Programs <br> Memory Allocations | Measure latency for various OS related operations |
-| perf-bench | Epoll Wait <br> Memcpy <br> Memset <br> Syscall Basic | Measure other OS related operations |
-| PostgreSQL | All combinations of the following: <br> Scaling Factor: 25 / 2500 <br> Client: 1 / 25 <br> Mode: Read Only / Read Write from pgbench | Measure various workload combinations using pgbench |
-| Redis | redis-benchmark tests for the following: <br> - GET <br> - LPOP <br> - LPUSH <br> - SADD <br> - SET | Benchmark various redis operations using redis-benchmark |
-| stress-ng | CPU_Cache <br> CPU Stress <br> Matrix Math <br> Memory Copy | Benchmark the CPU, and one memory benchmark |
-| Sysbench | CPU <br> RAM Memory | Benchmark CPU and Benchmark |
+| [Flexible IO Tester](https://openbenchmarking.org/test/pts/fio) | (Random Read) <br> Random Write <br> Sequential Read <br> Sequential Write | Test the throughput in MiB/s and IOPS, and the latency of various disk operations |
+| [Intel Memory Latency Checker](https://openbenchmarking.org/test/pts/intel-mlc) | Idle Latency Max Bandwidth and Peak Injeciton Bandwidth: <br> - All reads <br> - 1:1 read <br> - write ratio <br> - 2:1 read <br> - write ratio <br> - 3:1 read <br> - write ratio <br> - stream-triad like | Test throughput of various memory operations |
+| [OS Bench](https://openbenchmarking.org/test/pts/osbench) | Create Files <br> Create Processes <br> Create Threads <br> Launch Programs <br> Memory Allocations | Measure latency for various OS related operations |
+| [perf-bench](https://openbenchmarking.org/test/pts/perf-bench) | Epoll Wait <br> Memcpy <br> Memset <br> Syscall Basic | Measure other OS related operations |
+| [PostgreSQL](https://openbenchmarking.org/test/pts/pgbench) | All combinations of the following: <br> Scaling Factor: 25 / 2500 <br> Client: 1 / 25 <br> Mode: Read Only / Read Write from pgbench | Measure various workload combinations using pgbench |
+| [Redis](https://openbenchmarking.org/test/pts/redis-1.3.1) | redis-benchmark tests for the following: <br> - GET <br> - LPOP <br> - LPUSH <br> - SADD <br> - SET | Benchmark various redis operations using redis-benchmark |
+| [stress-ng](https://openbenchmarking.org/test/pts/stress-ng) | CPU_Cache <br> CPU Stress <br> Matrix Math <br> Memory Copy | Benchmark the CPU, and one memory benchmark |
+| [Sysbench](https://openbenchmarking.org/test/pts/sysbench) | CPU <br> RAM Memory | Benchmark CPU and Benchmark |
 
 During each iteration, the full set of benchmarks were run in a random order with a random splay between each benchmark.
 

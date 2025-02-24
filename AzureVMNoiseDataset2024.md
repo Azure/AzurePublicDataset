@@ -50,7 +50,12 @@ You can download the dataset here:  [**vm-noise-data**](https://github.com/Azure
 
 * 1 file per measurement unit, partitioned using Hive style table partitioning layout:
 
-`test_suite=<test_suite>/test_name=<test_name>/vm_lifespan=<short|long>/vm_region=(eastus|westus2)/vm_sku=(B8ms|D8s_v5)/unit=<unit>.csv`
+
+&#96;&#96;&#96;txt
+test_suite=<test_suite>/test_name=<test_name>/vm_lifespan=(short|long)/vm_region=(eastus|westus2)/vm_sku=(B8ms|D8s_v5)/unit=<unit>.csv
+&#96;&#96;&#96;
+
+Where `test_suite` and `test_name` can be taken from the table in the [benchmarks](#benchmarks) section below.
 
 ### Schema
 

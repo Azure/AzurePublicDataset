@@ -1,11 +1,13 @@
 # Overview
 
 This repository contains public releases of Microsoft Azure traces for the benefit of the research and academic community.
-There are currently two classes of traces: 
 
-* VM Traces: two representative traces of the virtual machine (VM) workload of Microsoft Azure collected in 2017 and 2019, and one VM request trace specifically for investigating packing algorihtms.
+There are currently four classes of traces:
+
+* VM Traces: two representative traces of the virtual machine (VM) workload of Microsoft Azure collected in 2017 and 2019, and one VM request trace specifically for investigating packing algorithms.
 * Azure Functions Traces: representative traces of Azure Functions invocations, collected over two weeks in 2019, and of Azure Functions blob accesses, collected between November and December of 2020.
 * Azure LLM Inference Traces: representative traces of LLM inference invocations with input and output tokens, collected in November 2023 and May 2024.
+* Azure VM Benchmark Noise Data: longitudinal data on performance variability for some resources and applications for two VM SKUs in two regions in Azure between May 2023 and September 2024.
 
 We provide the traces as they are, but are willing to help researchers understand and use them. So, please let us know of any issues or questions by sending email to our  [mailing list](mailto:azurepublicdataset@service.microsoft.com).
 

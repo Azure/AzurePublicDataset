@@ -3,7 +3,7 @@
 ## Introduction
 This is a sample of the traces from a multimodal model inference cluster in Azure, collected on Oct. 15<sup>th</sup>-22<sup>th</sup> 2024. This dataset is the data described and analyzed in the SoCC 2025 paper 'ModServe: Modality- and Stage-Aware Resource Disaggregation for Scalable Multimodal Model Serving'.
 
-The dataset comprises this description and a [Jupyter Notebook](https://github.com/Azure/AzurePublicDataset/blob/master/analysis/AzureLMMInferenceDataset2025.ipynb) with the plots in the SoCC paper.
+The dataset comprises this description and a [Jupyter Notebook](analysis/AzureLMMInferenceDataset2025.ipynb) with the plots in the SoCC paper.
 
 ## Using the data
 

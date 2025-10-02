@@ -7,6 +7,7 @@ There are currently four classes of traces:
 * VM Traces: two representative traces of the virtual machine (VM) workload of Microsoft Azure collected in 2017 and 2019, and one VM request trace specifically for investigating packing algorithms.
 * Azure Functions Traces: representative traces of Azure Functions invocations, collected over two weeks in 2019, and of Azure Functions blob accesses, collected between November and December of 2020.
 * Azure LLM Inference Traces: representative traces of LLM inference invocations with input and output tokens, collected in November 2023 and May 2024.
+* Azure Multimodal Inference Traces: representative traces of LMM inference invocations with number of images, input, and output tokens, collected in October 2024.
 * Azure VM Benchmark Noise Data: longitudinal data on performance variability for some resources and applications for two VM SKUs in two regions in Azure between May 2023 and September 2024.
 
 We provide the traces as they are, but are willing to help researchers understand and use them. So, please let us know of any issues or questions by sending email to our  [mailing list](mailto:azurepublicdataset@service.microsoft.com).
@@ -21,6 +22,7 @@ We provide the traces as they are, but are willing to help researchers understan
 * Dataset and code ([2023](AzureGreenSKUFramework2023.md)) for the paper "Designing Cloud Servers for Lower Carbon" (ISCA'24)
 * Traces ([2024](https://github.com/Azure/AzurePublicDataset/blob/master/AzureLLMInferenceDataset2024.md)) for the paper "DynamoLLM: Designing LLM Inference Clusters for Performance and Energy Efficiency" (HPCA'25)
 * Cloud Benchmarks ([2024](https://github.com/Azure/AzurePublicDataset/blob/master/AzureVMNoiseDataset2024.md)) for the paper "TUNA: Tuning Unstable and Noisy Cloud Applications" (EuroSys'25)
+* Traces ([2025](https://github.com/Azure/AzurePublicDataset/blob/master/AzureLLMInferenceDataset2025.md)) for the paper "ModServe: Modality- and Stage-Aware Resource Disaggregation for Scalable Multimodal Model Serving" (SoCC'25)
 
 ## VM Traces
 
@@ -71,9 +73,10 @@ If you do use the Azure Functions 2021 trace in your research, please cite this 
 * [AzureFunctionsBlobDataset2020](https://github.com/Azure/AzurePublicDataset/blob/master/AzureFunctionsBlobDataset2020.md) - This is a sample of the blob accesses in Microsoft's Azure Functions, collected between November 23<sup>rd</sup> and December 6<sup>th</sup> 2020. This dataset is the data described and analyzed in the SoCC 2021 paper 'Faa$T: A Transparent Auto-Scaling Cache for Serverless Applications'.
 
 
-## Azure LLM Inference Traces
+## Azure LLM/LMM Inference Traces
 * [AzureLLMInferenceDataset2023](https://github.com/Azure/AzurePublicDataset/blob/master/AzureLLMInferenceDataset2023.md) - This is a sample of two LLM inference services in Azure containing the input and output tokens. This dataset was collected on November 11<sup>th</sup> 2023. This contains the data described and analyzed in the ISCA 2024 paper 'Splitwise: Efficient generative LLM inference using phase splitting'.
 * [AzureLLMInferenceDataset2024](https://github.com/Azure/AzurePublicDataset/blob/master/AzureLLMInferenceDataset2024.md) - This is a longer one week sample of two LLM inference services in Azure containing the input and output tokens. This dataset was collected on May 2024. This contains the data described and analyzed in the HPCA 2025 paper 'DynamoLLM: Designing LLM Inference Clusters for Performance and Energy Efficiency'.
+* [AzureLMMInferenceDataset2025](https://github.com/Azure/AzurePublicDataset/blob/master/AzureLLMInferenceDataset2025.md) - This is a one week sample of a LMM inference cluster in Azure containing the number of images, input tokens, and output tokens associated with each request. This dataset was collected in Oct 2024. This contains the data described and analyzed in the SoCC 2025 paper 'ModServe: Modality- and Stage-Aware Resource Disaggregation for Scalable Multimodal Model Serving'.
 
 ## Azure Benchmark Traces
 * [AzureVMNoiseDataset2024](https://github.com/Azure/AzurePublicDataset/blob/master/AzureVMNoiseDataset2024.md) - This is a set of benchmarks that were run repeatedely over a period of 483 days. This dataset was collected from May 2023 to September 2024, and described and used as motivation in the EuroSys 2025 paper 'TUNA: Tuning Unstable and Noisy Cloud Applications'.

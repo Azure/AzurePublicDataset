@@ -22,7 +22,7 @@ We provide the traces as they are, but are willing to help researchers understan
 * Dataset and code ([2023](AzureGreenSKUFramework2023.md)) for the paper "Designing Cloud Servers for Lower Carbon" (ISCA'24)
 * Traces ([2024](https://github.com/Azure/AzurePublicDataset/blob/master/AzureLLMInferenceDataset2024.md)) for the paper "DynamoLLM: Designing LLM Inference Clusters for Performance and Energy Efficiency" (HPCA'25)
 * Cloud Benchmarks ([2024](https://github.com/Azure/AzurePublicDataset/blob/master/AzureVMNoiseDataset2024.md)) for the paper "TUNA: Tuning Unstable and Noisy Cloud Applications" (EuroSys'25)
-* Traces ([2025](https://github.com/Azure/AzurePublicDataset/blob/master/AzureLLMInferenceDataset2025.md)) for the paper "ModServe: Modality- and Stage-Aware Resource Disaggregation for Scalable Multimodal Model Serving" (SoCC'25)
+* Traces ([2025](https://github.com/Azure/AzurePublicDataset/blob/master/AzureLMMInferenceDataset2025.md)) for the paper "ModServe: Modality- and Stage-Aware Resource Disaggregation for Scalable Multimodal Model Serving" (SoCC'25)
 
 ## VM Traces
 
@@ -76,7 +76,7 @@ If you do use the Azure Functions 2021 trace in your research, please cite this 
 ## Azure LLM/LMM Inference Traces
 * [AzureLLMInferenceDataset2023](https://github.com/Azure/AzurePublicDataset/blob/master/AzureLLMInferenceDataset2023.md) - This is a sample of two LLM inference services in Azure containing the input and output tokens. This dataset was collected on November 11<sup>th</sup> 2023. This contains the data described and analyzed in the ISCA 2024 paper 'Splitwise: Efficient generative LLM inference using phase splitting'.
 * [AzureLLMInferenceDataset2024](https://github.com/Azure/AzurePublicDataset/blob/master/AzureLLMInferenceDataset2024.md) - This is a longer one week sample of two LLM inference services in Azure containing the input and output tokens. This dataset was collected on May 2024. This contains the data described and analyzed in the HPCA 2025 paper 'DynamoLLM: Designing LLM Inference Clusters for Performance and Energy Efficiency'.
-* [AzureLMMInferenceDataset2025](https://github.com/Azure/AzurePublicDataset/blob/master/AzureLLMInferenceDataset2025.md) - This is a one week sample of a LMM inference cluster in Azure containing the number of images, input tokens, and output tokens associated with each request. This dataset was collected in Oct 2024. This contains the data described and analyzed in the SoCC 2025 paper 'ModServe: Modality- and Stage-Aware Resource Disaggregation for Scalable Multimodal Model Serving'.
+* [AzureLMMInferenceDataset2025](https://github.com/Azure/AzurePublicDataset/blob/master/AzureLMMInferenceDataset2025.md) - This is a one week sample of a LMM inference cluster in Azure containing the number of images, input tokens, and output tokens associated with each request. This dataset was collected in Oct 2024. This contains the data described and analyzed in the SoCC 2025 paper 'ModServe: Modality- and Stage-Aware Resource Disaggregation for Scalable Multimodal Model Serving'.
 
 ## Azure Benchmark Traces
 * [AzureVMNoiseDataset2024](https://github.com/Azure/AzurePublicDataset/blob/master/AzureVMNoiseDataset2024.md) - This is a set of benchmarks that were run repeatedely over a period of 483 days. This dataset was collected from May 2023 to September 2024, and described and used as motivation in the EuroSys 2025 paper 'TUNA: Tuning Unstable and Noisy Cloud Applications'.

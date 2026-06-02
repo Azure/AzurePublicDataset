@@ -118,7 +118,8 @@ jobs:
 
             # Download to a temp file (stream — avoids disk accumulation)
             TMPFILE=$(mktemp)
-            HTTP_CODE=$(curl -fsSL -w "%{http_code}" -o "$TMPFILE" "$URL" 2>&1)
+            ENCODED_URL="${URL// /%20}"
+            HTTP_CODE=$(curl -fsSL -w "%{http_code}" -o "$TMPFILE" "$ENCODED_URL" 2>&1)
             CURL_EXIT=$?
 
             if [[ $CURL_EXIT -ne 0 || "$HTTP_CODE" -lt 200 || "$HTTP_CODE" -ge 300 ]]; then

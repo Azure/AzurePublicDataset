@@ -1,4 +1,4 @@
-﻿https://azurepublicdatasettraces.blob.core.windows.net/azurepublicdataset/Azure Public Dataset - Trace Analysis.ipynb
+https://azurepublicdatasettraces.blob.core.windows.net/azurepublicdataset/Azure Public Dataset - Trace Analysis.ipynb
 https://azurepublicdatasettraces.blob.core.windows.net/azurepublicdataset/schema.csv
 https://azurepublicdatasettraces.blob.core.windows.net/azurepublicdataset/sosp_data/category.txt
 https://azurepublicdatasettraces.blob.core.windows.net/azurepublicdataset/sosp_data/cores.txt

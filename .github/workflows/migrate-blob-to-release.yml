@@ -92,9 +92,10 @@ jobs:
             # Skip blank lines and comment lines
             [[ -z "$RAW_URL" || "$RAW_URL" == \#* ]] && continue
 
-            # Trim trailing whitespace/CR
+            # Trim trailing whitespace/CR and leading UTF-8 BOM if present
             URL="${RAW_URL%$'\r'}"
             URL="${URL%  }"
+            URL="${URL#$'\xef\xbb\xbf'}"
 
             # Derive a safe asset filename from the URL path
             BLOB_PATH="${URL#*blob.core.windows.net/*/}"

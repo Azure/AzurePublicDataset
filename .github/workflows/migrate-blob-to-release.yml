@@ -1,0 +1,157 @@
+name: Migrate Blob Storage to GitHub Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: 'Release tag (e.g. dataset-v2, dataset-v1, dataset-llm-2024)'
+        required: true
+        type: string
+      release_title:
+        description: 'Release title shown on the GitHub Releases page'
+        required: true
+        type: string
+      url_file:
+        description: 'Path (in repo) to the newline-delimited URL list file'
+        required: true
+        default: 'AzurePublicDatasetLinksV2.txt'
+        type: string
+      dry_run:
+        description: 'Dry run — list files without downloading/uploading'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'false'
+          - 'true'
+
+permissions:
+  contents: write   # required to create releases and upload assets
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360   # 6-hour cap; large datasets (195 csv.gz files) can be slow
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            ${{ inputs.url_file }}
+          sparse-checkout-cone-mode: false
+
+      # ── Validate inputs ────────────────────────────────────────────────────
+      - name: Validate URL file exists
+        run: |
+          if [[ ! -f "${{ inputs.url_file }}" ]]; then
+            echo "::error::URL file '${{ inputs.url_file }}' not found in repository"
+            exit 1
+          fi
+          TOTAL=$(grep -c 'https://' "${{ inputs.url_file }}" || true)
+          echo "Found ${TOTAL} URL(s) in ${{ inputs.url_file }}"
+
+      # ── Create or reuse the GitHub Release ─────────────────────────────────
+      - name: Create or get release
+        id: release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="${{ inputs.release_tag }}"
+          TITLE="${{ inputs.release_title }}"
+
+          # Check if the release already exists
+          RELEASE_URL=$(gh release view "$TAG" --json url --jq '.url' 2>/dev/null || echo "")
+
+          if [[ -z "$RELEASE_URL" ]]; then
+            echo "Creating new release: $TAG"
+            gh release create "$TAG" \
+              --title "$TITLE" \
+              --notes "Dataset files migrated from Azure Blob Storage. See the repository README for dataset descriptions." \
+              --prerelease
+          else
+            echo "Release '$TAG' already exists — will add/skip assets"
+          fi
+
+          # Fetch the list of already-uploaded asset names (for idempotency)
+          gh release view "$TAG" --json assets --jq '[.assets[].name]' > /tmp/existing_assets.json
+          echo "Existing assets: $(cat /tmp/existing_assets.json)"
+
+      # ── Download → Upload → Delete loop ────────────────────────────────────
+      - name: Upload assets
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="${{ inputs.release_tag }}"
+          DRY_RUN="${{ inputs.dry_run }}"
+          URL_FILE="${{ inputs.url_file }}"
+
+          PASS=0; SKIP=0; FAIL=0
+
+          while IFS= read -r RAW_URL || [[ -n "$RAW_URL" ]]; do
+            # Skip blank lines and comment lines
+            [[ -z "$RAW_URL" || "$RAW_URL" == \#* ]] && continue
+
+            # Trim trailing whitespace/CR
+            URL="${RAW_URL%$'\r'}"
+            URL="${URL%  }"
+
+            # Derive a safe asset filename from the URL path
+            BLOB_PATH="${URL#*blob.core.windows.net/*/}"
+            ASSET_NAME=$(echo "$BLOB_PATH" | tr '/' '_')
+
+            echo "──────────────────────────────────────────────"
+            echo "URL:   $URL"
+            echo "Asset: $ASSET_NAME"
+
+            if [[ "$DRY_RUN" == "true" ]]; then
+              echo "[DRY RUN] Would upload: $ASSET_NAME"
+              continue
+            fi
+
+            # Skip if already uploaded (idempotency)
+            if python3 -c "import json,sys; assets=json.load(open('/tmp/existing_assets.json')); sys.exit(0 if '$ASSET_NAME' in assets else 1)" 2>/dev/null; then
+              echo "SKIP: $ASSET_NAME (already uploaded)"
+              SKIP=$((SKIP + 1))
+              continue
+            fi
+
+            # Download to a temp file (stream — avoids disk accumulation)
+            TMPFILE=$(mktemp)
+            HTTP_CODE=$(curl -fsSL -w "%{http_code}" -o "$TMPFILE" "$URL" 2>&1)
+            CURL_EXIT=$?
+
+            if [[ $CURL_EXIT -ne 0 || "$HTTP_CODE" -lt 200 || "$HTTP_CODE" -ge 300 ]]; then
+              echo "::warning::FAIL download $ASSET_NAME (HTTP $HTTP_CODE, curl exit $CURL_EXIT)"
+              rm -f "$TMPFILE"
+              FAIL=$((FAIL + 1))
+              continue
+            fi
+
+            FILE_SIZE=$(stat -c%s "$TMPFILE")
+            echo "Downloaded: ${FILE_SIZE} bytes"
+
+            # Upload to the release
+            if gh release upload "$TAG" "$TMPFILE#$ASSET_NAME" --clobber; then
+              echo "PASS: $ASSET_NAME"
+              PASS=$((PASS + 1))
+            else
+              echo "::warning::FAIL upload $ASSET_NAME"
+              FAIL=$((FAIL + 1))
+            fi
+
+            rm -f "$TMPFILE"
+
+          done < "$URL_FILE"
+
+          echo ""
+          echo "════════════════════════════════════════════════"
+          echo "  Migration summary"
+          echo "  Uploaded : $PASS"
+          echo "  Skipped  : $SKIP  (already present)"
+          echo "  Failed   : $FAIL"
+          echo "════════════════════════════════════════════════"
+
+          if [[ $FAIL -gt 0 ]]; then
+            echo "::warning::$FAIL file(s) failed — re-run the workflow to retry (already-uploaded files are skipped automatically)"
+          fi

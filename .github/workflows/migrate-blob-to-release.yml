@@ -131,8 +131,13 @@ jobs:
             FILE_SIZE=$(stat -c%s "$TMPFILE")
             echo "Downloaded: ${FILE_SIZE} bytes"
 
+            # Rename temp file so the asset gets the correct filename
+            UPLOAD_DIR=$(mktemp -d)
+            mv "$TMPFILE" "$UPLOAD_DIR/$ASSET_NAME"
+            TMPFILE="$UPLOAD_DIR/$ASSET_NAME"
+
             # Upload to the release
-            if gh release upload "$TAG" "$TMPFILE#$ASSET_NAME" --clobber; then
+            if gh release upload "$TAG" "$TMPFILE" --clobber; then
               echo "PASS: $ASSET_NAME"
               PASS=$((PASS + 1))
             else
@@ -140,7 +145,7 @@ jobs:
               FAIL=$((FAIL + 1))
             fi
 
-            rm -f "$TMPFILE"
+            rm -rf "$UPLOAD_DIR"
 
           done < "$URL_FILE"
 

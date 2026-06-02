@@ -117,37 +117,51 @@ jobs:
               continue
             fi
 
-            # Download to a temp file (stream — avoids disk accumulation)
-            TMPFILE=$(mktemp)
+            # Download + upload with retries (handles transient stalls on large files)
             ENCODED_URL="${URL// /%20}"
-            HTTP_CODE=$(curl -fsSL -w "%{http_code}" -o "$TMPFILE" "$ENCODED_URL" 2>&1)
-            CURL_EXIT=$?
-
-            if [[ $CURL_EXIT -ne 0 || "$HTTP_CODE" -lt 200 || "$HTTP_CODE" -ge 300 ]]; then
-              echo "::warning::FAIL download $ASSET_NAME (HTTP $HTTP_CODE, curl exit $CURL_EXIT)"
-              rm -f "$TMPFILE"
-              FAIL=$((FAIL + 1))
-              continue
-            fi
-
-            FILE_SIZE=$(stat -c%s "$TMPFILE")
-            echo "Downloaded: ${FILE_SIZE} bytes"
-
-            # Rename temp file so the asset gets the correct filename
             UPLOAD_DIR=$(mktemp -d)
-            mv "$TMPFILE" "$UPLOAD_DIR/$ASSET_NAME"
             TMPFILE="$UPLOAD_DIR/$ASSET_NAME"
+            MAX_RETRIES=3
+            ATTEMPT=0
+            ASSET_OK=false
 
-            # Upload to the release
-            if gh release upload "$TAG" "$TMPFILE" --clobber; then
-              echo "PASS: $ASSET_NAME"
-              PASS=$((PASS + 1))
-            else
-              echo "::warning::FAIL upload $ASSET_NAME"
-              FAIL=$((FAIL + 1))
-            fi
+            while [[ $ATTEMPT -lt $MAX_RETRIES ]]; do
+              ATTEMPT=$((ATTEMPT + 1))
+              [[ $ATTEMPT -gt 1 ]] && echo "Retry attempt $ATTEMPT/$MAX_RETRIES..." && sleep $((ATTEMPT * 10))
+
+              rm -f "$TMPFILE"
+              HTTP_CODE=$(curl -fsSL \
+                --connect-timeout 60 \
+                --max-time 7200 \
+                --retry 2 --retry-delay 10 \
+                -w "%{http_code}" -o "$TMPFILE" "$ENCODED_URL" 2>&1)
+              CURL_EXIT=$?
+
+              if [[ $CURL_EXIT -ne 0 || "$HTTP_CODE" -lt 200 || "$HTTP_CODE" -ge 300 ]]; then
+                echo "::warning::FAIL download attempt $ATTEMPT for $ASSET_NAME (HTTP $HTTP_CODE, curl exit $CURL_EXIT)"
+                continue
+              fi
+
+              FILE_SIZE=$(stat -c%s "$TMPFILE")
+              echo "Downloaded: ${FILE_SIZE} bytes"
+
+              # Upload to the release (2-hour timeout prevents infinite stall)
+              if timeout 7200 gh release upload "$TAG" "$TMPFILE" --clobber; then
+                echo "PASS: $ASSET_NAME"
+                PASS=$((PASS + 1))
+                ASSET_OK=true
+                break
+              else
+                echo "::warning::FAIL upload attempt $ATTEMPT for $ASSET_NAME"
+              fi
+            done
 
             rm -rf "$UPLOAD_DIR"
+
+            if [[ "$ASSET_OK" != "true" ]]; then
+              echo "::warning::FAIL (all attempts exhausted) $ASSET_NAME"
+              FAIL=$((FAIL + 1))
+            fi
 
           done < "$URL_FILE"
 

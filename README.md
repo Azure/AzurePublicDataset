@@ -12,6 +12,10 @@ There are currently four classes of traces:
 
 We provide the traces as they are, but are willing to help researchers understand and use them. So, please let us know of any issues or questions by sending email to our  [mailing list](mailto:azurepublicdataset@service.microsoft.com).
 
+## Downloading the Data
+
+All trace files are hosted as assets on this repository's [GitHub Releases](https://github.com/Azure/AzurePublicDataset/releases). Each dataset's documentation page lists the specific download links. Previously, files were hosted on Azure Blob Storage; those URLs now redirect here.
+
 ## Quick links by paper:
 
 * Traces ([2017](https://github.com/Azure/AzurePublicDataset/blob/master/AzurePublicDatasetV1.md))([2019](https://github.com/Azure/AzurePublicDataset/blob/master/AzurePublicDatasetV2.md)) for the paper "Resource Central: Understanding and Predicting Workloads for Improved Resource Management in Large Cloud Platforms" (SOSP'17)

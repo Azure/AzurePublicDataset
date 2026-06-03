@@ -1,1 +1,1 @@
-https://azurepublicdatasettraces.blob.core.windows.net/azurepublicdatasetv2/azurefunctions_dataset2020/azurefunctions-accesses-2020.csv.bz2
+https://github.com/Azure/AzurePublicDataset/releases/download/dataset-functions-blob-2020/azurefunctions_dataset2020_azurefunctions-accesses-2020.csv.bz2

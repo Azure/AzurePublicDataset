@@ -25,7 +25,7 @@ If you use this data for a publication or project, please cite the accompanying 
 Lastly, if you have any questions, comments, or concerns, or if you would like to share tools for working with the traces, please contact us at azurepublicdataset@service.microsoft.com 
 
 ### Downloading
-You can download the dataset here: https://azurepublicdatasettraces.blob.core.windows.net/azurepublicdatasetv2/azurefunctions_dataset2020/azurefunctions-accesses-2020.csv.bz2
+You can download the dataset here: https://github.com/Azure/AzurePublicDataset/releases/download/dataset-functions-blob-2020/azurefunctions_dataset2020_azurefunctions-accesses-2020.csv.bz2
 
 ## Schema and Description
 

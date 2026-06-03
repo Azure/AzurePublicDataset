@@ -19,8 +19,8 @@ Lastly, if you have any questions, comments, or concerns, or if you would like t
 
 ### Downloading
 You can download the datasets here:
-* [Code](https://azurepublicdatasettraces.blob.core.windows.net/azurellminfererencetrace/AzureLLMInferenceTrace_code_1week.csv)
-* [Conversation](https://azurepublicdatasettraces.blob.core.windows.net/azurellminfererencetrace/AzureLLMInferenceTrace_conv_1week.csv)
+* [Code](https://github.com/Azure/AzurePublicDataset/releases/download/dataset-llm-2024/AzureLLMInferenceTrace_code_1week.csv)
+* [Conversation](https://github.com/Azure/AzurePublicDataset/releases/download/dataset-llm-2024/AzureLLMInferenceTrace_conv_1week.csv)
 
 ### Schema
 |Field|Description |

@@ -4,11 +4,6 @@ Aggregate the locally-downloaded trace shards into the paper's intermediate
 CSVs (``trace_metrics``) -> render PDFs with ``paper_figures`` +
 ``paper_style`` (the paper's styling/plotting code).
 
-Only the figures that are reproducible from the released **Visual Studio**
-traces are generated (see README for the reproducible/excluded table). Figures
-the paper drew from VS Code or per-user data are either produced as their
-VS-side equivalent (token/cache/model/trend figures) or skipped.
-
 Run from inside this directory::
 
     python make_figures.py                 # aggregate traces + render

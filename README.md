@@ -9,7 +9,7 @@ There are currently four classes of traces:
 * Azure LLM Inference Traces: representative traces of LLM inference invocations with input and output tokens, collected in November 2023 and May 2024.
 * Azure Multimodal Inference Traces: representative traces of LMM inference invocations with number of images, input, and output tokens, collected in October 2024.
 * Azure VM Benchmark Noise Data: longitudinal data on performance variability for some resources and applications for two VM SKUs in two regions in Azure between May 2023 and September 2024.
-* GitHub Copilot Coding Agent Traces: agentic coding session traces from GitHub Copilot for Visual Studio, covering June 1–7, 2026, capturing LLM call metadata, tool invocations, token accounting, and cache behavior.
+* GitHub Copilot Coding Agent Traces: agentic coding session traces from GitHub Copilot in June 2026, capturing LLM call metadata, tool invocations, token accounting, and cache behavior.
 
 We provide the traces as they are, but are willing to help researchers understand and use them. So, please let us know of any issues or questions by sending email to our  [mailing list](mailto:azurepublicdataset@service.microsoft.com).
 
@@ -88,7 +88,7 @@ If you do use the Azure Functions 2021 trace in your research, please cite this 
 * [AzureVMNoiseDataset2024](https://github.com/Azure/AzurePublicDataset/blob/master/AzureVMNoiseDataset2024.md) - This is a set of benchmarks that were run repeatedely over a period of 483 days. This dataset was collected from May 2023 to September 2024, and described and used as motivation in the EuroSys 2025 paper 'TUNA: Tuning Unstable and Noisy Cloud Applications'.
 
 ## GitHub Copilot Coding Agent Traces
-* [GitHubCopilotCodingAgentDataset2026](https://github.com/Azure/AzurePublicDataset/blob/master/GitHubCopilotCodingAgentDataset2026.md) - A uniformly-sampled slice of agentic GitHub Copilot sessions from Visual Studio, covering June 1–7, 2026. Each session includes LLM call metadata, tool invocations, token accounting, and cache behavior. This dataset is described and analyzed in the arXiv 2026 paper 'Agentic Coding in the Wild: Characterizing GitHub Copilot Traces at Production Scale'.
+* [GitHubCopilotCodingAgentDataset2026](https://github.com/Azure/AzurePublicDataset/blob/master/GitHubCopilotCodingAgentDataset2026.md) - Sampled agentic coding sessions from GitHub Copilot collected from June 1–7, 2026. Each session includes LLM call metadata, tool invocations, token accounting, and cache behavior. This dataset is described and analyzed in the arXiv 2026 paper 'Agentic Coding in the Wild: Characterizing GitHub Copilot Traces at Production Scale'.
 
 ### Contact us
 Please let us know of any issues or questions by sending email to our [mailing list](mailto:azurepublicdataset@service.microsoft.com).

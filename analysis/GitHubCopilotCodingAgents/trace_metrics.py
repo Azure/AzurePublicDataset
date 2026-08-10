@@ -1,14 +1,8 @@
 """Reproduce the paper's intermediate ``data/`` CSVs from the released traces.
 
 Every function here re-derives one (or a few) of the CSV tables that the paper's
-plotting code (``paper_figures.py``) consumes, sourced from the **locally downloaded
-traces**. Two properties of the released data shape the results:
-
-* **No sampling.** We stream over *all* downloaded sessions (the release is
-  already a uniform 25% population sample).
-* **Visual Studio only.** The release contains VS agentic traces, so VS Code and
-  per-user figures are not reproduced (see README). Trend/model tables are
-  reproduced as their **VS-side** equivalent over the released June 1-7 window.
+plotting code (``paper_figures.py``) consumes, sourced from the locally downloaded
+traces. Two properties of the released data shape the results:
 
 Output CSV column names/orders match what ``paper_figures.py`` expects, so it
 renders without modification.

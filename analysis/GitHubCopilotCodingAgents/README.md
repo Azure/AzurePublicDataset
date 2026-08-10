@@ -1,7 +1,7 @@
 # Reproducing the paper figures from the released GHCP traces
 
-This is a **standalone bundle** that reproduces the paper figures from the
-public **GitHub Copilot for Visual Studio** agentic trace release.
+This folder contains scripts and instructions that reproduce the paper figures from the
+public GitHub Copilot agentic coding trace release.
 
 Everything you need is in this folder — download the trace data from the
 [GitHub release](https://github.com/Azure/AzurePublicDataset/releases/tag/ghcp-coding-agent-2026)
@@ -27,9 +27,6 @@ full field reference and dataset description.
 1. **Python 3.9+** and the dependencies:
 
    ```bash
-   python -m venv .venv
-   # Windows:  .venv\Scripts\activate
-   # macOS/Linux:  source .venv/bin/activate
    pip install -r requirements.txt
    ```
 
@@ -86,10 +83,9 @@ Outputs:
 
 ## Reproducible figures
 
-All are Visual Studio agentic metrics derived from the released fields
+All are agentic metrics derived from the released fields
 (`llm_calls`: tokens / cache / model / duration / timestamp / `message_metadata`;
-`tool_batches`: tool name / status / duration). Figures suffixed `_vs` are the
-Visual Studio series of the paper's VS-vs-VS-Code comparison plots.
+`tool_batches`: tool name / status / duration).
 
 | Figure(s) | Source table(s) |
 |-----------|-----------------|

@@ -1,0 +1,55 @@
+{
+  "release": "ghcp-vs-agent-traces-2026-06",
+  "description": "Per-session agentic traces from GitHub Copilot. One JSON object per agentic session (newline-delimited JSONL, gzip-compressed).",
+  "record": {
+    "session_id": "string - anonymized agentic conversation id",
+    "date": "string (YYYY-MM-DD) - UTC partition date the session was sampled from",
+    "turns": [
+      {
+        "turn_id": "string - anonymized user turn id; one user request and its full agentic chain",
+        "llm_calls": [
+          {
+            "message_id": "string - anonymized message id",
+            "timestamp": "string (ISO-8601 UTC) - client request time",
+            "duration_ms": "number - end-to-end LLM call duration",
+            "initiator_type": "string - 'user' (turn-initiating call) or 'agent' (follow-up call)",
+            "model": "string - anonymized model label ('Model A', 'Model B', ...; 'tool-model' = the instant-apply edit model used for certain tool calls)",
+            "result": "string - call result status (e.g., 'Success', 'UserCancel')",
+            "status_code": "string - call status code (e.g., 'OK')",
+            "tokens": {
+              "total": "number - total tokens",
+              "prompt": "number - prompt tokens",
+              "completion": "number - completion tokens",
+              "cached": "number - cached prompt tokens",
+              "cached_pct": "number - cache hit percentage"
+            },
+            "message_metadata": [
+              {
+                "type": "string - message segment type (System, Context, UserMessage, ...)",
+                "role": "string - chat role (system, user, assistant)",
+                "sequenceId": "number - ordering index within the prompt",
+                "token_len": "number - tokens for the segment"
+              }
+            ]
+          }
+        ],
+        "tool_batches": [
+          {
+            "timestamp": "string (ISO-8601 UTC) - batch invocation time",
+            "duration_ms": "number - batch wall-clock duration (parallel tools share one batch)",
+            "auto_continue": "boolean - whether the agent auto-continued after this batch",
+            "result": "string - batch result status",
+            "request_id": "string - anonymized id of the LLM request that triggered this batch",
+            "function_calls": [
+              {
+                "name": "string - tool name, e.g. 'get_file', 'code_search', 'edit_file'",
+                "status": "number - 1 = success, 2 = failure/timeout",
+                "duration_ms": "number - individual tool duration"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

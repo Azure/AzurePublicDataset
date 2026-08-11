@@ -44,7 +44,7 @@ segment's text.
 
 ## Anonymization
 All identifiers (`session_id`, `turn_id`, `message_id`, and tool-batch
-`request_id`) are hashed.
+`request_id`) are salted and hashed.
 
 Model names are separately mapped to generic labels (`Model A`, `Model B`, ...) ranked by usage.
 

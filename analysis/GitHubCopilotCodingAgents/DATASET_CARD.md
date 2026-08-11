@@ -3,7 +3,7 @@
 ## Summary
 A uniformly-sampled, reproducible slice of agentic GitHub Copilot sessions
 from Visual Studio, covering June 1–7, 2026 (UTC). Each record is one
-agentic session: an ordered set of user *turns*, where each turn contains the
+agentic session: an ordered set of user *turns* (ordered by time), where each turn contains the
 LLM calls and tool-invocation batches that made up the agent's work.
 
 The dataset captures the **structure and resource accounting** of agent runs —

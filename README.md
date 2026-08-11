@@ -9,6 +9,7 @@ There are currently four classes of traces:
 * Azure LLM Inference Traces: representative traces of LLM inference invocations with input and output tokens, collected in November 2023 and May 2024.
 * Azure Multimodal Inference Traces: representative traces of LMM inference invocations with number of images, input, and output tokens, collected in October 2024.
 * Azure VM Benchmark Noise Data: longitudinal data on performance variability for some resources and applications for two VM SKUs in two regions in Azure between May 2023 and September 2024.
+* GitHub Copilot Coding Agent Traces: agentic coding session traces from GitHub Copilot in June 2026, capturing LLM call metadata, tool invocations, token accounting, and cache behavior.
 
 We provide the traces as they are, but are willing to help researchers understand and use them. So, please let us know of any issues or questions by sending email to our  [mailing list](mailto:azurepublicdataset@service.microsoft.com).
 
@@ -27,6 +28,7 @@ All trace files are hosted as assets on this repository's [GitHub Releases](http
 * Traces ([2024](https://github.com/Azure/AzurePublicDataset/blob/master/AzureLLMInferenceDataset2024.md)) for the paper "DynamoLLM: Designing LLM Inference Clusters for Performance and Energy Efficiency" (HPCA'25)
 * Cloud Benchmarks ([2024](https://github.com/Azure/AzurePublicDataset/blob/master/AzureVMNoiseDataset2024.md)) for the paper "TUNA: Tuning Unstable and Noisy Cloud Applications" (EuroSys'25)
 * Traces ([2025](https://github.com/Azure/AzurePublicDataset/blob/master/AzureLMMInferenceDataset2025.md)) for the paper "ModServe: Modality- and Stage-Aware Resource Disaggregation for Scalable Multimodal Model Serving" (SoCC'25)
+* Traces ([2026](https://github.com/Azure/AzurePublicDataset/blob/master/GitHubCopilotCodingAgentDataset2026.md)) for the paper "Agentic Coding in the Wild: Characterizing GitHub Copilot Traces at Production Scale" (arXiv'26)
 
 ## VM Traces
 
@@ -84,6 +86,9 @@ If you do use the Azure Functions 2021 trace in your research, please cite this 
 
 ## Azure Benchmark Traces
 * [AzureVMNoiseDataset2024](https://github.com/Azure/AzurePublicDataset/blob/master/AzureVMNoiseDataset2024.md) - This is a set of benchmarks that were run repeatedely over a period of 483 days. This dataset was collected from May 2023 to September 2024, and described and used as motivation in the EuroSys 2025 paper 'TUNA: Tuning Unstable and Noisy Cloud Applications'.
+
+## GitHub Copilot Coding Agent Traces
+* [GitHubCopilotCodingAgentDataset2026](https://github.com/Azure/AzurePublicDataset/blob/master/GitHubCopilotCodingAgentDataset2026.md) - A uniformly-sampled slice of ~265K agentic GitHub Copilot sessions (~1.2M user turns) from Visual Studio, covering June 1–7, 2026. Each session includes LLM call metadata, tool invocations, token accounting, and cache behavior. This dataset is described and analyzed in the arXiv 2026 paper 'Agentic Coding in the Wild: Characterizing GitHub Copilot Traces at Production Scale'.
 
 ### Contact us
 Please let us know of any issues or questions by sending email to our [mailing list](mailto:azurepublicdataset@service.microsoft.com).

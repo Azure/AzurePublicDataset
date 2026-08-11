@@ -88,7 +88,7 @@ If you do use the Azure Functions 2021 trace in your research, please cite this 
 * [AzureVMNoiseDataset2024](https://github.com/Azure/AzurePublicDataset/blob/master/AzureVMNoiseDataset2024.md) - This is a set of benchmarks that were run repeatedely over a period of 483 days. This dataset was collected from May 2023 to September 2024, and described and used as motivation in the EuroSys 2025 paper 'TUNA: Tuning Unstable and Noisy Cloud Applications'.
 
 ## GitHub Copilot Coding Agent Traces
-* [GitHubCopilotCodingAgentDataset2026](https://github.com/Azure/AzurePublicDataset/blob/master/GitHubCopilotCodingAgentDataset2026.md) - Sampled agentic coding sessions from GitHub Copilot collected from June 1–7, 2026. Each session includes LLM call metadata, tool invocations, token accounting, and cache behavior. This dataset is described and analyzed in the arXiv 2026 paper 'Agentic Coding in the Wild: Characterizing GitHub Copilot Traces at Production Scale'.
+* [GitHubCopilotCodingAgentDataset2026](https://github.com/Azure/AzurePublicDataset/blob/master/GitHubCopilotCodingAgentDataset2026.md) - A uniformly-sampled slice of ~265K agentic GitHub Copilot sessions (~1.2M user turns) from Visual Studio, covering June 1–7, 2026. Each session includes LLM call metadata, tool invocations, token accounting, and cache behavior. This dataset is described and analyzed in the arXiv 2026 paper 'Agentic Coding in the Wild: Characterizing GitHub Copilot Traces at Production Scale'.
 
 ### Contact us
 Please let us know of any issues or questions by sending email to our [mailing list](mailto:azurepublicdataset@service.microsoft.com).

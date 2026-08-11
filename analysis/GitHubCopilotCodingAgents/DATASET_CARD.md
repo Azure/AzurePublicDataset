@@ -23,6 +23,21 @@ The `message_metadata` field describes each prompt segment by *type*, *role*,
 *sequence position*, and *token count* only — not the
 segment's text.
 
+## Dataset Statistics
+
+| Metric | Value |
+|--------|-------|
+| Date range (UTC) | 2026-06-01 .. 2026-06-07 |
+| Days | 7 |
+| Agentic sessions | 265K |
+| User turns | 1.2M |
+| LLM calls | 9.3M |
+| Tool calls | 8.7M |
+| Distinct (anonymized) models | 37 |
+| Prompt tokens (sum) | 638B |
+| Completion tokens (sum) | 4.9B |
+| Cached prompt tokens (sum) | 541B |
+
 ## Sampling
 - **Population:** agentic-mode sessions.
 - **Sampling:** fixed sampling rate across all dates.

@@ -22,6 +22,23 @@ full field reference and dataset description.
 
 ---
 
+## Dataset Statistics
+
+| Metric | Value |
+|--------|-------|
+| Date range (UTC) | 2026-06-01 .. 2026-06-07 |
+| Days | 7 |
+| Agentic sessions | 265K |
+| User turns | 1.2M |
+| LLM calls | 9.3M |
+| Tool calls | 8.7M |
+| Distinct (anonymized) models | 37 |
+| Prompt tokens (sum) | 638B |
+| Completion tokens (sum) | 4.9B |
+| Cached prompt tokens (sum) | 541B |
+
+---
+
 ## Prerequisites
 
 1. **Python 3.9+** and the dependencies:

@@ -7,11 +7,15 @@ plot_template/ should call ``setup_style()`` once at import time, then use
 """
 
 import os
+import warnings
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
 import numpy as np
+
+# Suppress the "loc=best can be slow" warning globally.
+warnings.filterwarnings("ignore", message=".*Creating legend with loc.*best.*")
 
 # ---------------------------------------------------------------------------
 # 1. Global style setup
@@ -38,6 +42,7 @@ def setup_style():
         "ytick.major.size": 3,
         "legend.fontsize": LEGEND_SIZE,
         "legend.frameon": True,
+        "legend.loc": "upper right",
         "figure.figsize": (2, 1.6),      # single-column default
         "figure.dpi": 300,
     })

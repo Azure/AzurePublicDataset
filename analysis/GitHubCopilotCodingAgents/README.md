@@ -28,14 +28,17 @@ full field reference and dataset description.
 |--------|-------|
 | Date range (UTC) | 2026-06-01 .. 2026-06-07 |
 | Days | 7 |
-| Agentic sessions | 265K |
+| Agentic sessions | 301K |
 | User turns | 1.2M |
 | LLM calls | 9.3M |
 | Tool calls | 8.7M |
 | Distinct (anonymized) models | 37 |
-| Prompt tokens (sum) | 638B |
+| Prompt tokens (sum) | 631.4B |
 | Completion tokens (sum) | 4.9B |
 | Cached prompt tokens (sum) | 541B |
+| Avg turns / session | 3.95 |
+| Avg LLM calls / turn | 7.83 |
+| Avg tool calls / turn | 7.3 |
 
 ---
 

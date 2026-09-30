@@ -2,7 +2,7 @@
 
 ## Summary
 A uniformly-sampled, reproducible slice of agentic GitHub Copilot sessions
-from Visual Studio, covering June 1–7, 2026 (UTC). Each record is one
+from non-enterprise users, covering June 1–7, 2026 (UTC). Each record is one
 agentic session: an ordered set of user *turns* (ordered by time), where each turn contains the
 LLM calls and tool-invocation batches that made up the agent's work.
 
@@ -29,14 +29,18 @@ segment's text.
 |--------|-------|
 | Date range (UTC) | 2026-06-01 .. 2026-06-07 |
 | Days | 7 |
-| Agentic sessions | 265K |
-| User turns | 1.2M |
-| LLM calls | 9.3M |
-| Tool calls | 8.7M |
+| Agentic sessions | 301,026 |
+| User turns | 1,189,581 |
+| LLM calls | 9,310,255 |
+| Tool batches | 7,767,261 |
+| Tool calls | 8,681,190 |
 | Distinct (anonymized) models | 37 |
-| Prompt tokens (sum) | 638B |
-| Completion tokens (sum) | 4.9B |
-| Cached prompt tokens (sum) | 541B |
+| Prompt tokens (sum) | 631.4B |
+| Completion tokens (sum) | 4.91B |
+| Cached prompt tokens (sum) | 540.95B |
+| Avg turns / session | 3.95 |
+| Avg LLM calls / turn | 7.83 |
+| Avg tool calls / turn | 7.3 |
 
 ## Sampling
 - **Population:** agentic-mode sessions.

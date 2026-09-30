@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The traces contain uniformly-sampled agentic coding sessions from GitHub Copilot, covering June 1–7, 2026.
+The traces contain uniformly-sampled agentic coding sessions from GitHub Copilot non-enterprise users, covering June 1–7, 2026.
 
 Detailed analysis on the full traces can be found in our [arXiv paper](https://arxiv.org/abs/2608.00101).
 
@@ -57,14 +57,17 @@ Each tool batch includes: `timestamp`, `duration_ms`, `function_calls` (tool nam
 |--------|-------|
 | Date range (UTC) | 2026-06-01 .. 2026-06-07 |
 | Days | 7 |
-| Agentic sessions | 265K |
+| Agentic sessions | 301K |
 | User turns | 1.2M |
 | LLM calls | 9.3M |
 | Tool calls | 8.7M |
 | Distinct (anonymized) models | 37 |
-| Prompt tokens (sum) | 638B |
-| Completion tokens (sum) | 4.9B |
-| Cached prompt tokens (sum) | 541B |
+| Prompt tokens (sum) | 631.4B |
+| Completion tokens (sum) | 4.91B |
+| Cached prompt tokens (sum) | 540.95B |
+| Avg turns / session | 3.95 |
+| Avg LLM calls / turn | 7.83 |
+| Avg tool calls / turn | 7.3 |
 
 ### What it does **not** contain
 

@@ -31,9 +31,9 @@ If you use this data for a publication or project, please cite the accompanying 
 
 ### Downloading
 
-Download the trace shards from the [GitHub release](https://github.com/Azure/AzurePublicDataset/releases/tag/ghcp-coding-agent-2026).
+Download the trace archives from the [GitHub release](https://github.com/Azure/AzurePublicDataset/releases/tag/ghcp-coding-agent-2026).
 
-The release contains gzip-compressed JSONL files partitioned by date (`date=2026-06-01/shard-0000.jsonl.gz`, etc.).
+Details are in [README](analysis/GitHubCopilotCodingAgents/README.md).
 
 ### Schema
 

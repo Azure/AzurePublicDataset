@@ -56,11 +56,10 @@ Model names are separately mapped to generic labels (`Model A`, `Model B`, ...) 
 - **Records:** one JSON object per session, newline-delimited (**JSONL**),
   **gzip-compressed**.
 - **Sharding:** roughly 500 sessions per shard.
-- **Blob layout** (`<container>/<prefix>/`):
+
+- After downloading, the layout should be looking like:
   ```
-  release_2026-06/
-    schema.json
-    DATASET_CARD.md
+  downloaded+data/
     date=2026-06-01/
       manifest.json
       shard-0000.jsonl.gz
@@ -69,6 +68,27 @@ Model names are separately mapped to generic labels (`Model A`, `Model B`, ...) 
     date=2026-06-02/
       ...
   ```
+- **GitHub Release layout:**  Each `date=YYYY-MM-DD/` partition is published as
+  its own `.tar.gz` archive that extracts back into the original layout:
+
+  | Asset | Size (approx.) |
+  |-------|----------------|
+  | `date=2026-06-01.tar.gz` | 567 MB |
+  | `date=2026-06-02.tar.gz` | 593 MB |
+  | `date=2026-06-03.tar.gz` | 590 MB |
+  | `date=2026-06-04.tar.gz` | 547 MB |
+  | `date=2026-06-05.tar.gz` | 523 MB |
+  | `date=2026-06-06.tar.gz` | 119 MB |
+  | `date=2026-06-07.tar.gz` | 133 MB |
+
+  Download the archive(s) you need into `downloaded_data/` and extract in
+  place, e.g.:
+  ```bash
+  cd downloaded_data/
+  tar -xzf date=2026-06-01.tar.gz
+  # -> downloaded_data/date=2026-06-01/manifest.json, shard-0000.jsonl.gz, ...
+  ```
+
 - **Field reference:** see `schema.json`.
 
 ## Reading the data

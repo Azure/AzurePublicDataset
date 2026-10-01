@@ -16,7 +16,7 @@ The data is made available and licensed under a [CC-BY Attribution License](http
 If you use this data for a publication or project, please cite the accompanying paper:
 
 ```
-@inproceedings{qlm2024patke,
+@inproceedings{modserve2025qiu,
   author = {Qiu, Haoran and Biswas, Anish and Zhao, Zihan and Mohan, Jayashree and Khare, Alind and Choukse, Esha and Goiri, {\'I}{\~n}igo and Zhang, Zeyu and Shen, Haiying and Bansal, Chetan and Ramjee, Ramachandran and Fonseca, Rodrigo},
   title = {ModServe: Modality- and Stage-Aware Resource Disaggregation for Scalable Multimodal Model Serving},
   year = {2025},

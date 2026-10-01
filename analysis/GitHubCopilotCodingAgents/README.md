@@ -56,13 +56,13 @@ full field reference and dataset description.
    https://github.com/Azure/AzurePublicDataset/releases/tag/ghcp-coding-agent-2026
    ```
 
-   The release publishes one `.tar.gz` archive per date (`date=2026-06-01.tar.gz`, ...
-   `date=2026-06-07.tar.gz`).
+   The release publishes one `.tar.gz` archive per date (`date.2026-06-01.tar.gz`, ...
+   `date.2026-06-07.tar.gz`).
    Download and extract each one you want directly inside `downloaded_data/`:
 
    ```bash
    cd downloaded_data/
-   tar -xzf date=2026-06-01.tar.gz
+   tar -xzf date.2026-06-01.tar.gz
    ```
 
    After extracting, the folder should contain `date=2026-06-01/`, `date=2026-06-02/`, etc., each with a `manifest.json` and `.jsonl.gz` shard files.

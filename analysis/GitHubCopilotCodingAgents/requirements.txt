@@ -1,0 +1,8 @@
+# Runtime dependencies for reproducing the figures from the locally downloaded traces.
+pandas>=2.0
+numpy>=1.24
+matplotlib>=3.7
+
+# Only needed for the guided notebook (GitHubCopilotCodingAgentDataset2026.ipynb).
+jupyter>=1.0
+ipython>=8.0

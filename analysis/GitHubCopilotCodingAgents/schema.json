@@ -1,0 +1,55 @@
+{
+  "window_start": "2026-06-01",
+  "window_end": "2026-06-07",
+  "record": {
+    "session_id": "string",
+    "date": "string (YYYY-MM-DD)",
+    "turns": [
+      {
+        "turn_id": "string",
+        "llm_calls": [
+          {
+            "message_id": "string",
+            "timestamp": "string",
+            "duration_ms": "float - end-to-end LLM call duration",
+            "initiator_type": "string - 'user' (turn-initiating call) or 'agent' (follow-up call)",
+            "model": "string - anonymized model label ('Model A', 'Model B', ...)",
+            "result": "string - call result status (e.g., 'Success', 'UserCancel')",
+            "status_code": "string - call status code (e.g., 'OK')",
+            "tokens": {
+              "total": "integer - prompt + completion",
+              "prompt": "integer",
+              "completion": "integer",
+              "cached": "integer",
+              "cached_pct": "float"
+            },
+            "message_metadata": [
+              {
+                "type": "string - message segment type (System, Context, UserMessage, ...)",
+                "role": "string - chat role (system, user, assistant)",
+                "sequenceId": "integer - ordering index within the prompt",
+                "token_len": "integer"
+              }
+            ]
+          }
+        ],
+        "tool_batches": [
+          {
+            "timestamp": "string",
+            "duration_ms": "float - batch wall-clock duration",
+            "auto_continue": "boolean - whether the agent auto-continued after this batch",
+            "result": "string - batch result status",
+            "request_id": "string - matches with message_id from LLM calls",
+            "function_calls": [
+              {
+                "name": "string - tool name (custom tools are anonymized)",
+                "status": "integer - 1 = success, 2 = failure/timeout",
+                "duration_ms": "float - individual tool duration"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -9,13 +9,12 @@ allocation, packing, workload arrivals, lifetimes, and reuse of container
 image bundles.
 
 The release contains 85,570,448 records from a uniform draw of whole
-`(subscription, namespace)` groups, followed by whole-group image-identity
+namespace groups, followed by whole-group image-identity
 exclusions. Sampling is at the group level, not the record level. The
 resources are declared pod aggregates, not measured CPU or memory usage.
 
 CPU and memory requests and limits are independently rounded **down** to
-powers of two. Identifiers are pseudonymized and timestamps are relative;
-the release does not provide a software-anonymity guarantee.
+powers of two. Identifiers are pseudonymized and timestamps are relative.
 
 The related publication is *Unipool: Efficient Management of
 Pre-Provisioned Resources for Container Platforms* (SIGOPS ATC 2026).
@@ -60,7 +59,7 @@ Download from the
 
 | Asset | Contents | Size |
 | --- | --- | ---: |
-| [AzurePodDataset2026.tar.gz](https://github.com/Azure/AzurePublicDataset/releases/download/dataset-pods-2026/AzurePodDataset2026.tar.gz) | CSV shards, manifest, and README | 1,756,177,258 bytes |
+| [AzurePodDataset2026.tar.gz](https://github.com/Azure/AzurePublicDataset/releases/download/dataset-pods-2026/AzurePodDataset2026.tar.gz) | CSV shards, manifest, and README | 1,756,177,115 bytes |
 | [SHA256SUMS](https://github.com/Azure/AzurePublicDataset/releases/download/dataset-pods-2026/SHA256SUMS) | Archive checksum | Small text file |
 
 The [download list](AzurePodDataset2026Links.txt) contains the same asset
@@ -82,7 +81,7 @@ requires no concatenation with another archive.
 | --- | ---: |
 | Creation window | 7 days / 604,800,000 milliseconds |
 | Pod records | 85,570,448 |
-| Pseudonymous customer groups | 383,364 |
+| Pseudonymous namespace groups | 383,364 |
 | Pseudonymous image bundles | 103,360 |
 | CSV shards | 672 |
 | Missing CPU limits | 9,811,395 |
@@ -99,8 +98,8 @@ Each row represents one captured pod creation/lifecycle record.
 | Field | Type | Meaning and processing |
 | --- | --- | --- |
 | `invocation_id` | Integer | Global sequence starting at 1 after creation-time/private tie-break ordering. |
-| `customer_id` | String | Domain-separated keyed pseudonym of `(subscription, namespace)`; not a standalone subscription ID. |
-| `container_group_id` | String | Keyed pseudonym of the normalized image-repository multiset; stable across customers and shards. |
+| `customer_id` | String | Pseudonymous namespace identifier, stable across shards. |
+| `container_group_id` | String | Keyed pseudonym of the normalized image-repository multiset; stable across namespaces and shards. |
 | `created_time` | Integer | Creation time in milliseconds relative to the private trace origin. |
 | `deleted_time` | Nullable integer | Deletion time relative to the same origin; blank when unavailable. |
 | `requested_cpu` | Number | Aggregate CPU request, floored to powers of two in cores and stored in millicores. |
@@ -124,8 +123,8 @@ rather than being clipped or converted to zero. Missing limits remain
 blank. The shared monotone rule for each dimension preserves valid
 request/limit ordering, but it can change equality and ratios.
 
-Identifiers use separate HMAC-SHA-256 domains, truncated to 16 bytes and
-rendered as 32 lowercase hexadecimal characters. Image grouping ignores
+Identifiers use independent hashing domains. Hash outputs are truncated
+to 16 bytes and rendered as 32 lowercase hexadecimal characters. Image grouping ignores
 tags and digests, preserves registry/repository and duplicate images,
 and is independent of container ordering. No individual-image identifiers
 or raw image names are released.
@@ -142,8 +141,7 @@ expected SHA-256. A public checksum is also provided in
 [SHA256SUMS](analysis/AzurePods2026/SHA256SUMS).
 
 This validates the release's integrity and transformation rules, not
-population representativeness or anonymity. Declared resources are not
+population representativeness. Declared resources are not
 usage measurements. A missing deletion is not necessarily ordinary
 right-censoring. Quantized values and combinations may be unobserved in
 the source or unsuitable for verbatim use in a Kubernetes API request.
-Stable relationships and auxiliary information can still identify software.

@@ -19,14 +19,14 @@
       "type": "string",
       "nullable": false,
       "pattern": "^[0-9a-f]{32}$",
-      "description": "Keyed pseudonym of the subscription/namespace pair."
+      "description": "Pseudonymous namespace identifier, stable across shards."
     },
     {
       "name": "container_group_id",
       "type": "string",
       "nullable": false,
       "pattern": "^[0-9a-f]{32}$",
-      "description": "Keyed pseudonym of the normalized image-repository multiset, stable across customers and shards."
+      "description": "Keyed pseudonym of the normalized image-repository multiset, stable across namespaces and shards."
     },
     {
       "name": "created_time",
@@ -101,7 +101,7 @@
     "bounds_are_inclusive": true,
     "requests_and_limits_share_dimension_grid": true
   },
-  "identity_scope": "All shards in this release; no cross-release identity guarantee",
+  "identity_scope": "All shards in this release",
   "creation_window_ms": [0, 604800000],
   "creation_window_upper_exclusive": true,
   "shard_window_ms": 900000,

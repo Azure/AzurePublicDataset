@@ -18,7 +18,7 @@ New-Item -ItemType Directory -Path downloaded_data -Force | Out-Null
 Set-Location downloaded_data
 $release = 'https://github.com/Azure/AzurePublicDataset/releases/download/dataset-pods-2026'
 Invoke-WebRequest -Uri "$release/AzurePodDataset2026.tar.gz" -OutFile AzurePodDataset2026.tar.gz
-$expected = 'f7683f7cc481a46b5c9e767aa5545dba6040011fbdfe050cc77c65ecdcede997'
+$expected = '71dd2b56e98dc200fe166c3fb09801c3af6c1467e0f75f5cd15922977e82874c'
 $actual = (Get-FileHash -LiteralPath AzurePodDataset2026.tar.gz -Algorithm SHA256).Hash.ToLowerInvariant()
 if ($actual -cne $expected) { throw 'Archive checksum mismatch' }
 tar -xzf AzurePodDataset2026.tar.gz

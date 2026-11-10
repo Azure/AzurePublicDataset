@@ -5,7 +5,7 @@
 A representative sample of first-party Azure Kubernetes Service (AKS) pod
 creation/lifecycle records covering seven consecutive relative days.
 The trace contains 85,570,448 records in 672 fifteen-minute CSV shards,
-with 383,364 pseudonymous customer groups and 103,360 pseudonymous image
+with 383,364 pseudonymous namespace groups and 103,360 pseudonymous image
 bundles.
 
 Intended uses include pre-provisioning, allocation, packing, arrival and
@@ -18,13 +18,13 @@ requests and limits, not measurements of actual CPU or memory consumption.
    excludes `kube-system`, and represents regular containers with CPU
    requests. Init containers and regular containers without CPU requests
    are not represented.
-2. A verified UID/subscription lookup retains confirmed first-party rows;
+2. A verified ownership lookup retains confirmed first-party rows;
    third-party and unresolved ownership are excluded. Ownership reflects
    the lookup snapshot rather than necessarily the original event time.
 3. Existing request exclusions remove CPU requests at or below zero or
    above 256,000 millicores, and memory requests above 1,048,576 MiB.
    Those request cutoffs are not applied to limits.
-4. One uniform draw selects whole `(subscription, namespace)` groups.
+4. One uniform draw selects whole namespace groups.
    All eligible records for selected groups are retained without seed
    retries or a record-count balancing target.
 5. A selected group is excluded in full if any eligible row has an
@@ -36,17 +36,17 @@ The reported counts describe only the released sample.
 
 ## Pseudonymization and resource processing
 
-Customer IDs encode the subscription/namespace pair. There is no separate
-subscription ID; absent cluster identifiers mean that equal namespace
-names within one subscription can combine records from multiple clusters.
+`customer_id` is the pseudonymous namespace identifier, stable across
+shards. Cluster identifiers are not included. A namespace ID can combine
+records from multiple clusters.
 
 Image-bundle IDs encode sorted image-repository multisets. Tags and digests
 are ignored; registries, repository paths, and duplicates are retained.
-The same normalized bundle has one ID across customers and shards.
+The same normalized bundle has one ID across namespaces and shards.
 Different image bundles can nevertheless represent the same software family.
 
-Both identity domains use secret-keyed HMAC-SHA-256, truncated to 16 bytes
-and rendered as 32 lowercase hexadecimal characters. The keys and
+Identifiers use independent hashing domains. Hash outputs are truncated
+to 16 bytes and rendered as 32 lowercase hexadecimal characters. The keys and
 selection-to-dataset mappings are not included.
 
 The four resource columns are rounded independently down to the largest
@@ -83,7 +83,7 @@ Zero memory and a missing limit are distinct states.
 
 One `.tar.gz` contains `README.md`, `manifest.json`, and 672 CSVs.
 All CSVs include the twelve-column header defined in [schema.json](schema.json).
-The archive is 1,756,177,258 bytes; the CSV payload is 10,517,181,916 bytes.
+The archive is 1,756,177,115 bytes; the CSV payload is 10,517,181,916 bytes.
 
 The manifest records shard checksums, sizes, row counts, and invocation
 ranges. The archive checksum is in [SHA256SUMS](SHA256SUMS).
@@ -92,15 +92,12 @@ non-resource fields; archive validation checks every decompressed member.
 
 ## Excluded information and limitations
 
-The release contains no raw pod UIDs, subscription GUIDs, namespace or
+The release contains no raw pod UIDs, namespace or
 container names, image references, individual-image hashes, absolute
 production timestamps, keys, or private audit/identity mappings.
 It also does not label pre-provisioned versus active pods or provide
 measured cold-start, readiness-latency, or resource-utilization telemetry.
 
-Pseudonymization and resource coarsening are not differential privacy or
-a software-anonymity guarantee. Stable relationships, timing, resource
-patterns, or outside information can still reveal software identity.
 Bundle equality does not identify a software family or version.
 
 Do not interpret the data as actual utilization, exact original resource

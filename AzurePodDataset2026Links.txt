@@ -1,0 +1,2 @@
+https://github.com/Azure/AzurePublicDataset/releases/download/dataset-pods-2026/AzurePodDataset2026.tar.gz
+https://github.com/Azure/AzurePublicDataset/releases/download/dataset-pods-2026/SHA256SUMS

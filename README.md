@@ -2,7 +2,7 @@
 
 This repository contains public releases of Microsoft Azure traces for the benefit of the research and academic community.
 
-There are currently four classes of traces:
+The following classes of traces are available:
 
 * VM Traces: two representative traces of the virtual machine (VM) workload of Microsoft Azure collected in 2017 and 2019, and one VM request trace specifically for investigating packing algorithms.
 * Azure Functions Traces: representative traces of Azure Functions invocations, collected over two weeks in 2019, and of Azure Functions blob accesses, collected between November and December of 2020.
@@ -10,6 +10,7 @@ There are currently four classes of traces:
 * Azure Multimodal Inference Traces: representative traces of LMM inference invocations with number of images, input, and output tokens, collected in October 2024.
 * Azure VM Benchmark Noise Data: longitudinal data on performance variability for some resources and applications for two VM SKUs in two regions in Azure between May 2023 and September 2024.
 * GitHub Copilot Coding Agent Traces: agentic coding session traces from GitHub Copilot in June 2026, capturing LLM call metadata, tool invocations, token accounting, and cache behavior.
+* Azure Pod Traces: a representative sample of first-party AKS pod creation/lifecycle records over seven relative days, with pseudonymous customer/image-bundle IDs and power-of-two CPU/memory requests and limits.
 
 We provide the traces as they are, but are willing to help researchers understand and use them. So, please let us know of any issues or questions by sending email to our  [mailing list](mailto:azurepublicdataset@service.microsoft.com).
 
@@ -17,7 +18,7 @@ We provide the traces as they are, but are willing to help researchers understan
 
 All trace files are hosted as assets on this repository's [GitHub Releases](https://github.com/Azure/AzurePublicDataset/releases). Each dataset's documentation page lists the specific download links. Previously, files were hosted on Azure Blob Storage; those URLs now redirect here.
 
-## Quick links by paper:
+## Quick links by paper
 
 * Traces ([2017](https://github.com/Azure/AzurePublicDataset/blob/master/AzurePublicDatasetV1.md))([2019](https://github.com/Azure/AzurePublicDataset/blob/master/AzurePublicDatasetV2.md)) for the paper "Resource Central: Understanding and Predicting Workloads for Improved Resource Management in Large Cloud Platforms" (SOSP'17)
 * Traces ([2019](https://github.com/Azure/AzurePublicDataset/blob/master/AzureFunctionsDataset2019.md)) for the paper "Serverless in the Wild: Characterizing and Optimizing the Serverless Workload at a Large Cloud Provider" (ATC'19)
@@ -29,10 +30,15 @@ All trace files are hosted as assets on this repository's [GitHub Releases](http
 * Cloud Benchmarks ([2024](https://github.com/Azure/AzurePublicDataset/blob/master/AzureVMNoiseDataset2024.md)) for the paper "TUNA: Tuning Unstable and Noisy Cloud Applications" (EuroSys'25)
 * Traces ([2025](https://github.com/Azure/AzurePublicDataset/blob/master/AzureLMMInferenceDataset2025.md)) for the paper "ModServe: Modality- and Stage-Aware Resource Disaggregation for Scalable Multimodal Model Serving" (SoCC'25)
 * Traces ([2026](https://github.com/Azure/AzurePublicDataset/blob/master/GitHubCopilotCodingAgentDataset2026.md)) for the paper "Agentic Coding in the Wild: Characterizing GitHub Copilot Traces at Production Scale" (arXiv'26)
+* Traces ([2026](AzurePodDataset2026.md)) related to the paper "Unipool: Efficient Management of Pre-Provisioned Resources for Container Platforms" (SIGOPS ATC 2026)
 
 ## VM Traces
 
-The traces are sanitized subsets of the first-party VM workload in one of Azure’s geographical regions.  We include jupyter notebooks that directly compare the main characteristics of each trace to its corresponding full VM workload, showing that they are qualitatively very similar (except for VM deployment sizes in 2019).  Comparing the characteristics of the two traces illustrates how the workload has changed over this two-year span.
+The traces are sanitized subsets of the first-party VM workload in one of Azure’s geographical regions.
+We include jupyter notebooks that directly compare the main characteristics of each trace to its
+corresponding full VM workload, showing that they are qualitatively very similar (except for VM
+deployment sizes in 2019). Comparing the characteristics of the two traces illustrates how the
+workload has changed over this two-year span.
 
 If you do use either of these VM traces in your research, please make sure to cite our SOSP’17 paper ["Resource Central: Understanding and Predicting Workloads for Improved Resource Management in Large Cloud Platforms"](https://www.microsoft.com/en-us/research/wp-content/uploads/2017/10/Resource-Central-SOSP17.pdf), which includes a full analysis of the Azure VM workload in 2017.
 
@@ -67,7 +73,7 @@ If you do use the Azure Functions 2019 traces in your research, please make sure
 * [AzureFunctionsInvocationTrace2021](https://github.com/Azure/AzurePublicDataset/blob/master/AzureFunctionsInvocationTrace2021.md) - This is a trace of function invocations for two weeks starting on 2021-01-31. The trace contains invocation arrival and departure (or compeletion) times, with the folloiwng schema:  
 
   * app: application id (encrypted)
-  * func: function id (encrypted), and unique only within an application 
+  * func: function id (encrypted), and unique only within an application
   * end_timestamp: function invocation end timestamp in millisecond
   * duration: duration of function invocation in millisecond
 
@@ -76,19 +82,30 @@ If you do use the Azure Functions 2021 trace in your research, please cite this 
 
 ### Functions Blob Accesses
 
-* [AzureFunctionsBlobDataset2020](https://github.com/Azure/AzurePublicDataset/blob/master/AzureFunctionsBlobDataset2020.md) - This is a sample of the blob accesses in Microsoft's Azure Functions, collected between November 23<sup>rd</sup> and December 6<sup>th</sup> 2020. This dataset is the data described and analyzed in the SoCC 2021 paper 'Faa$T: A Transparent Auto-Scaling Cache for Serverless Applications'.
+* [AzureFunctionsBlobDataset2020](https://github.com/Azure/AzurePublicDataset/blob/master/AzureFunctionsBlobDataset2020.md) - This is a sample of the blob accesses in Microsoft's Azure Functions, collected between November 23<sup>rd</sup> and December 6<sup>th</sup> 2020.
+  This dataset is the data described and analyzed in the SoCC 2021 paper 'Faa$T: A Transparent Auto-Scaling Cache for Serverless Applications'.
 
 
 ## Azure LLM/LMM Inference Traces
-* [AzureLLMInferenceDataset2023](https://github.com/Azure/AzurePublicDataset/blob/master/AzureLLMInferenceDataset2023.md) - This is a sample of two LLM inference services in Azure containing the input and output tokens. This dataset was collected on November 11<sup>th</sup> 2023. This contains the data described and analyzed in the ISCA 2024 paper 'Splitwise: Efficient generative LLM inference using phase splitting'.
-* [AzureLLMInferenceDataset2024](https://github.com/Azure/AzurePublicDataset/blob/master/AzureLLMInferenceDataset2024.md) - This is a longer one week sample of two LLM inference services in Azure containing the input and output tokens. This dataset was collected on May 2024. This contains the data described and analyzed in the HPCA 2025 paper 'DynamoLLM: Designing LLM Inference Clusters for Performance and Energy Efficiency'.
-* [AzureLMMInferenceDataset2025](https://github.com/Azure/AzurePublicDataset/blob/master/AzureLMMInferenceDataset2025.md) - This is a one week sample of a LMM inference cluster in Azure containing the number of images, input tokens, and output tokens associated with each request. This dataset was collected in Oct 2024. This contains the data described and analyzed in the SoCC 2025 paper 'ModServe: Modality- and Stage-Aware Resource Disaggregation for Scalable Multimodal Model Serving'.
+* [AzureLLMInferenceDataset2023](https://github.com/Azure/AzurePublicDataset/blob/master/AzureLLMInferenceDataset2023.md) - This is a sample of two LLM inference services in Azure containing the input and output tokens.
+  This dataset was collected on November 11<sup>th</sup> 2023. This contains the data described and analyzed in the ISCA 2024 paper 'Splitwise: Efficient generative LLM inference using phase splitting'.
+* [AzureLLMInferenceDataset2024](https://github.com/Azure/AzurePublicDataset/blob/master/AzureLLMInferenceDataset2024.md) - This is a longer one week sample of two LLM inference services in Azure containing the input and output tokens.
+  This dataset was collected on May 2024. This contains the data described and analyzed in the HPCA 2025 paper 'DynamoLLM: Designing LLM Inference Clusters for Performance and Energy Efficiency'.
+* [AzureLMMInferenceDataset2025](https://github.com/Azure/AzurePublicDataset/blob/master/AzureLMMInferenceDataset2025.md) - This is a one week sample of a LMM inference cluster in Azure containing the number of images, input tokens, and output tokens associated with each request.
+  This dataset was collected in Oct 2024. This contains the data described and analyzed in the SoCC 2025 paper 'ModServe: Modality- and Stage-Aware Resource Disaggregation for Scalable Multimodal Model Serving'.
 
 ## Azure Benchmark Traces
 * [AzureVMNoiseDataset2024](https://github.com/Azure/AzurePublicDataset/blob/master/AzureVMNoiseDataset2024.md) - This is a set of benchmarks that were run repeatedely over a period of 483 days. This dataset was collected from May 2023 to September 2024, and described and used as motivation in the EuroSys 2025 paper 'TUNA: Tuning Unstable and Noisy Cloud Applications'.
 
 ## GitHub Copilot Coding Agent Traces
-* [GitHubCopilotCodingAgentDataset2026](https://github.com/Azure/AzurePublicDataset/blob/master/GitHubCopilotCodingAgentDataset2026.md) - A uniformly-sampled slice of ~301K agentic GitHub Copilot sessions (~1.19M user turns) from Visual Studio, covering June 1–7, 2026. Each session includes LLM call metadata, tool invocations, token accounting, and cache behavior. This dataset is described and analyzed in the arXiv 2026 paper 'Agentic Coding in the Wild: Characterizing GitHub Copilot Traces at Production Scale'.
+* [GitHubCopilotCodingAgentDataset2026](https://github.com/Azure/AzurePublicDataset/blob/master/GitHubCopilotCodingAgentDataset2026.md) - A uniformly-sampled slice of ~301K agentic GitHub Copilot sessions (~1.19M user turns) from Visual Studio, covering June 1–7, 2026.
+  Each session includes LLM call metadata, tool invocations, token accounting, and cache behavior. This dataset is described and analyzed in the arXiv 2026 paper 'Agentic Coding in the Wild: Characterizing GitHub Copilot Traces at Production Scale'.
+
+## Azure Pod Traces
+
+* [AzurePodDataset2026](AzurePodDataset2026.md) - A representative sample of first-party AKS pod records, containing 85,570,448 records in 672 CSV shards over seven relative days.
+  It includes declared CPU/memory requests and limits rounded down to powers of two, lifecycle timing, and stable pseudonymous customer/image-bundle relationships.
+  The related paper is "Unipool: Efficient Management of Pre-Provisioned Resources for Container Platforms" (SIGOPS ATC 2026).
 
 ### Contact us
 Please let us know of any issues or questions by sending email to our [mailing list](mailto:azurepublicdataset@service.microsoft.com).

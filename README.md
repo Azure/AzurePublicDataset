@@ -10,7 +10,9 @@ There are currently four classes of traces:
 * Azure Multimodal Inference Traces: representative traces of LMM inference invocations with number of images, input, and output tokens, collected in October 2024.
 * Azure VM Benchmark Noise Data: longitudinal data on performance variability for some resources and applications for two VM SKUs in two regions in Azure between May 2023 and September 2024.
 * GitHub Copilot Coding Agent Traces: agentic coding session traces from GitHub Copilot in June 2026, capturing LLM call metadata, tool invocations, token accounting, and cache behavior.
-* Azure Pod Traces: a representative sample of first-party AKS pod creation/lifecycle records over seven relative days, with pseudonymous namespace/image-bundle IDs and power-of-two CPU/memory requests and limits.
+* Azure Pod Traces: first-party AKS pod creation/lifecycle records over seven relative days, with pseudonymous namespace/image-bundle IDs and power-of-two CPU/memory requests and limits.
+  This dataset contains a representative sample of pod creation records, with an unspecified sampling fraction.
+  The released trace alone does not support estimating total service traffic.
 
 We provide the traces as they are, but are willing to help researchers understand and use them. So, please let us know of any issues or questions by sending email to our  [mailing list](mailto:azurepublicdataset@service.microsoft.com).
 
@@ -94,7 +96,9 @@ If you do use the Azure Functions 2021 trace in your research, please cite this 
 
 ## Azure Pod Traces
 
-* [AzurePodDataset2026](AzurePodDataset2026.md) - A representative sample of first-party AKS pod records, containing 85,570,448 records in 672 CSV shards over seven relative days.
+* [AzurePodDataset2026](AzurePodDataset2026.md) - First-party AKS pod records, containing 85,570,448 records in 672 CSV shards over seven relative days.
+  This dataset contains a representative sample of pod creation records, with an unspecified sampling fraction.
+  The released trace alone does not support estimating total service traffic.
   It includes declared CPU/memory requests and limits rounded down to powers of two, lifecycle timing, and stable pseudonymous namespace/image-bundle relationships.
   The related paper is "Unipool: Efficient Management of Pre-Provisioned Resources for Container Platforms" (SIGOPS ATC 2026).
 

@@ -2,11 +2,15 @@
 
 ## Introduction
 
-This trace is a representative sample of first-party Azure Kubernetes
-Service (AKS) pod creation and lifecycle records over seven consecutive
+This trace contains first-party Azure Kubernetes Service (AKS) pod
+creation and lifecycle records over seven consecutive
 relative days. It supports research on pre-provisioning, resource
 allocation, packing, workload arrivals, lifetimes, and reuse of container
 image bundles.
+
+This dataset contains a representative sample of pod creation records,
+with an unspecified sampling fraction. The released trace alone does not
+support estimating total service traffic.
 
 The release contains 85,570,448 records from a uniform draw of whole
 namespace groups, followed by whole-group image-identity
@@ -59,7 +63,7 @@ Download from the
 
 | Asset | Contents | Size |
 | --- | --- | ---: |
-| [AzurePodDataset2026.tar.gz](https://github.com/Azure/AzurePublicDataset/releases/download/dataset-pods-2026/AzurePodDataset2026.tar.gz) | CSV shards, manifest, and README | 1,756,177,115 bytes |
+| [AzurePodDataset2026.tar.gz](https://github.com/Azure/AzurePublicDataset/releases/download/dataset-pods-2026/AzurePodDataset2026.tar.gz) | CSV shards, manifest, and README | 1,756,177,617 bytes |
 | [SHA256SUMS](https://github.com/Azure/AzurePublicDataset/releases/download/dataset-pods-2026/SHA256SUMS) | Archive checksum | Small text file |
 
 The [download list](AzurePodDataset2026Links.txt) contains the same asset

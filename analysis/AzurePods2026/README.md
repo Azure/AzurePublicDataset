@@ -5,6 +5,10 @@ See the [dataset page](../../AzurePodDataset2026.md),
 This directory contains documentation and checksums, not the trace data
 or the paper PDF.
 
+This dataset contains a representative sample of pod creation records,
+with an unspecified sampling fraction. The released trace alone does not
+support estimating total service traffic.
+
 ## Download and verify
 
 Download `AzurePodDataset2026.tar.gz` and `SHA256SUMS` from the
@@ -18,7 +22,7 @@ New-Item -ItemType Directory -Path downloaded_data -Force | Out-Null
 Set-Location downloaded_data
 $release = 'https://github.com/Azure/AzurePublicDataset/releases/download/dataset-pods-2026'
 Invoke-WebRequest -Uri "$release/AzurePodDataset2026.tar.gz" -OutFile AzurePodDataset2026.tar.gz
-$expected = '71dd2b56e98dc200fe166c3fb09801c3af6c1467e0f75f5cd15922977e82874c'
+$expected = '4ec5457ca2d12bdaf5e73aa48ff04d55cac5a904e7add2fa31442a3e8ffc654e'
 $actual = (Get-FileHash -LiteralPath AzurePodDataset2026.tar.gz -Algorithm SHA256).Hash.ToLowerInvariant()
 if ($actual -cne $expected) { throw 'Archive checksum mismatch' }
 tar -xzf AzurePodDataset2026.tar.gz

@@ -2,11 +2,15 @@
 
 ## Summary
 
-A representative sample of first-party Azure Kubernetes Service (AKS) pod
+First-party Azure Kubernetes Service (AKS) pod
 creation/lifecycle records covering seven consecutive relative days.
 The trace contains 85,570,448 records in 672 fifteen-minute CSV shards,
 with 383,364 pseudonymous namespace groups and 103,360 pseudonymous image
 bundles.
+
+This dataset contains a representative sample of pod creation records,
+with an unspecified sampling fraction. The released trace alone does not
+support estimating total service traffic.
 
 Intended uses include pre-provisioning, allocation, packing, arrival and
 lifetime replay, and image-bundle reuse studies. Resources are declared
@@ -83,7 +87,7 @@ Zero memory and a missing limit are distinct states.
 
 One `.tar.gz` contains `README.md`, `manifest.json`, and 672 CSVs.
 All CSVs include the twelve-column header defined in [schema.json](schema.json).
-The archive is 1,756,177,115 bytes; the CSV payload is 10,517,181,916 bytes.
+The archive is 1,756,177,617 bytes; the CSV payload is 10,517,181,916 bytes.
 
 The manifest records shard checksums, sizes, row counts, and invocation
 ranges. The archive checksum is in [SHA256SUMS](SHA256SUMS).

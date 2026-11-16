@@ -1,0 +1,41 @@
+---
+name: Test migration workflow
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - .github/workflows/migrate-blob-to-release.yml
+      - .github/workflows/test-migration.yml
+      - tests/requirements.txt
+      - tests/test_migrate_blob_to_release.py
+  pull_request:
+    branches:
+      - master
+    paths:
+      - .github/workflows/migrate-blob-to-release.yml
+      - .github/workflows/test-migration.yml
+      - tests/requirements.txt
+      - tests/test_migrate_blob_to_release.py
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-26.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Install test dependencies in an isolated environment
+        run: |
+          python3 -m venv "$RUNNER_TEMP/migration-tests"
+          "$RUNNER_TEMP/migration-tests/bin/python" -m pip install \
+            -r tests/requirements.txt
+
+      - name: Test migration without network operations
+        run: >-
+          "$RUNNER_TEMP/migration-tests/bin/python" -m unittest discover -s tests
+          -p test_migrate_blob_to_release.py -v

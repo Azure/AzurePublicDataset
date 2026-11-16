@@ -30,7 +30,7 @@ permissions:
 
 jobs:
   migrate:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 360   # 6-hour cap; large datasets (195 csv.gz files) can be slow
 
     steps:

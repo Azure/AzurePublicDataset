@@ -16,17 +16,27 @@ jobs:
     runs-on: ubuntu-26.04
     steps:
       - name: Checkout repository
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
         with:
           fetch-depth: 0
 
       - name: Run Super-Linter
-        uses: super-linter/super-linter@2da136927bd4a73596db63044b504547c62cb854 # v9.0.0
+        uses: super-linter/super-linter@2da136927bd4a73596db63044b504547c62cb854  # v9.0.0
         env:
           DEFAULT_BRANCH: master
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VALIDATE_ALL_CODEBASE: false
+          VALIDATE_ALL_CODEBASE: true
+          FILTER_REGEX_INCLUDE: '\.(json|py|ya?ml)$'
+          MULTI_STATUS: false
+          ENABLE_GITHUB_PULL_REQUEST_SUMMARY_COMMENT: false
           VALIDATE_JSON: true
-          VALIDATE_MARKDOWN: true
-          VALIDATE_PYTHON: true
+          VALIDATE_PYTHON_RUFF: true
           VALIDATE_YAML: true
+
+      - name: Run Markdown Super-Linter
+        uses: super-linter/super-linter@2da136927bd4a73596db63044b504547c62cb854  # v9.0.0
+        env:
+          DEFAULT_BRANCH: master
+          VALIDATE_ALL_CODEBASE: false
+          MULTI_STATUS: false
+          ENABLE_GITHUB_PULL_REQUEST_SUMMARY_COMMENT: false
+          VALIDATE_MARKDOWN: true

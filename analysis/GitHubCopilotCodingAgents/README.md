@@ -67,6 +67,9 @@ full field reference and dataset description.
 
    After extracting, the folder should contain `date=2026-06-01/`, `date=2026-06-02/`, etc., each with a `manifest.json` and `.jsonl.gz` shard files.
 
+   Downloaded archives and extracted shards are ignored by Git. The checked-in
+   `downloaded_data/README.md` remains tracked.
+
 ---
 
 ## Running
@@ -106,7 +109,7 @@ python make_figures.py --skip-aggregate
 
 Outputs:
 - `data/*.csv` — intermediate tables (regenerable; gitignored).
-- `figures/*.pdf` — the reproduced figures.
+- `figures/*.pdf` — the reproduced figures (regenerable; gitignored).
 
 ---
 

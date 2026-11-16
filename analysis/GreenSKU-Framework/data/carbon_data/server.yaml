@@ -1,5 +1,5 @@
 - type: Server-1U
-  items: 
+  items:
     server:
       number: 1
       power: 35W        # Lump sum Azure estimate
@@ -11,7 +11,7 @@
       spec_derates: {10: 0.2, 20: 0.28, 30: 0.36, 40: 0.44, 50: 0.53, 60: 0.62, 70: 0.7, 80: 0.79, 90: 0.88, 100: 0.95}
 
 - type: Server-2U
-  items: 
+  items:
     server:
       number: 1
       power: 35W        # Lump sum Azure estimate

@@ -26,6 +26,8 @@ jobs:
           DEFAULT_BRANCH: master
           VALIDATE_ALL_CODEBASE: true
           FILTER_REGEX_INCLUDE: '\.(json|py|ya?ml)$'
+          MULTI_STATUS: false
+          ENABLE_GITHUB_PULL_REQUEST_SUMMARY_COMMENT: false
           VALIDATE_JSON: true
           VALIDATE_PYTHON_RUFF: true
           VALIDATE_YAML: true
@@ -35,4 +37,6 @@ jobs:
         env:
           DEFAULT_BRANCH: master
           VALIDATE_ALL_CODEBASE: false
+          MULTI_STATUS: false
+          ENABLE_GITHUB_PULL_REQUEST_SUMMARY_COMMENT: false
           VALIDATE_MARKDOWN: true

@@ -7,7 +7,7 @@ Everything you need is in this folder — download the trace data from the
 [GitHub release](https://github.com/Azure/AzurePublicDataset/releases/tag/ghcp-coding-agent-2026)
 into `downloaded_data/`, then run the analysis.
 
-```
+```text
 downloaded_data/     trace shards (gzipped JSONL, one folder per date)
 trace_loader.py      shards  ->  tidy per-call/batch/turn DataFrames
 trace_metrics.py     traces  ->  data/*.csv               (intermediate tables)
@@ -25,7 +25,7 @@ full field reference and dataset description.
 ## Dataset Statistics
 
 | Metric | Value |
-|--------|-------|
+| --- | --- |
 | Date range (UTC) | 2026-06-01 .. 2026-06-07 |
 | Days | 7 |
 | Agentic sessions | 301K |
@@ -52,7 +52,7 @@ full field reference and dataset description.
 
 2. **Download the traces** from the GitHub release into `downloaded_data/`:
 
-   ```
+   ```text
    https://github.com/Azure/AzurePublicDataset/releases/tag/ghcp-coding-agent-2026
    ```
 
@@ -66,6 +66,9 @@ full field reference and dataset description.
    ```
 
    After extracting, the folder should contain `date=2026-06-01/`, `date=2026-06-02/`, etc., each with a `manifest.json` and `.jsonl.gz` shard files.
+
+   Downloaded archives and extracted shards are ignored by Git. The checked-in
+   `downloaded_data/README.md` remains tracked.
 
 ---
 
@@ -106,7 +109,7 @@ python make_figures.py --skip-aggregate
 
 Outputs:
 - `data/*.csv` — intermediate tables (regenerable; gitignored).
-- `figures/*.pdf` — the reproduced figures.
+- `figures/*.pdf` — the reproduced figures (regenerable; gitignored).
 
 ---
 
@@ -117,7 +120,7 @@ All are agentic metrics derived from the released fields
 `tool_batches`: tool name / status / duration).
 
 | Figure(s) | Source table(s) |
-|-----------|-----------------|
+| --- | --- |
 | `session_duration_hist_cdf_logscale_vs`, `turn_duration_hist_cdf_logscale_vs`, `session_turns_cdf`, `per_session_calls_cdf`, `per_turn_calls_cdf` | `vs_session_stats` |
 | `time_breakdown_llm_tool_user_cdf_vs`, `..._multi_turn_vs`, `time_breakdown_llm_tool_cdf_single_turn_vs` | `vs_session_stats` |
 | `user_idle_time_cdf` / `tool_driven_idle_time_cdf` | `vs_session_stats` / `vs_idle_gaps` |

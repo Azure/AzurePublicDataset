@@ -274,6 +274,17 @@ paket-files/
 __pycache__/
 *.pyc
 
+# Local Python environments and notebook checkpoints
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Downloaded and regenerable GitHub Copilot trace analysis files
+/analysis/GitHubCopilotCodingAgents/downloaded_data/*
+!/analysis/GitHubCopilotCodingAgents/downloaded_data/README.md
+/analysis/GitHubCopilotCodingAgents/data/*.csv
+/analysis/GitHubCopilotCodingAgents/figures/*.pdf
+
 # Cake - Uncomment if you are using it
 # tools/**
 # !tools/packages.config

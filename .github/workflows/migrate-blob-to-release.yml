@@ -17,7 +17,7 @@ on:
         default: 'AzurePublicDatasetLinksV2.txt'
         type: string
       dry_run:
-        description: 'Dry run — list files without downloading/uploading'
+        description: 'List files without creating releases or transferring data'
         required: false
         default: 'false'
         type: choice
@@ -53,6 +53,7 @@ jobs:
 
       # ── Create or reuse the GitHub Release ─────────────────────────────────
       - name: Create or get release
+        if: inputs.dry_run != 'true'
         id: release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -130,12 +131,15 @@ jobs:
               [[ $ATTEMPT -gt 1 ]] && echo "Retry attempt $ATTEMPT/$MAX_RETRIES..." && sleep $((ATTEMPT * 10))
 
               rm -f "$TMPFILE"
-              HTTP_CODE=$(curl -fsSL \
+              if HTTP_CODE=$(curl -fsSL \
                 --connect-timeout 60 \
                 --max-time 7200 \
                 --retry 2 --retry-delay 10 \
-                -w "%{http_code}" -o "$TMPFILE" "$ENCODED_URL" 2>&1)
-              CURL_EXIT=$?
+                -w "%{http_code}" -o "$TMPFILE" "$ENCODED_URL"); then
+                CURL_EXIT=0
+              else
+                CURL_EXIT=$?
+              fi
 
               if [[ $CURL_EXIT -ne 0 || "$HTTP_CODE" -lt 200 || "$HTTP_CODE" -ge 300 ]]; then
                 echo "::warning::FAIL download attempt $ATTEMPT for $ASSET_NAME (HTTP $HTTP_CODE, curl exit $CURL_EXIT)"
@@ -174,5 +178,6 @@ jobs:
           echo "════════════════════════════════════════════════"
 
           if [[ $FAIL -gt 0 ]]; then
-            echo "::warning::$FAIL file(s) failed — re-run the workflow to retry (already-uploaded files are skipped automatically)"
+            echo "::error::$FAIL file(s) failed — re-run the workflow to retry (already-uploaded files are skipped automatically)"
+            exit 1
           fi

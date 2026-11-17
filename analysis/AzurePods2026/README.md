@@ -13,8 +13,9 @@ support estimating total service traffic.
 
 [AzurePodDataset2026.ipynb](AzurePodDataset2026.ipynb) presents the Unipool
 paper's **Instance lifetimes** and **Request arrivals** analyses, plus CPU
-and memory distributions, on this release. Keep `azure_pod_analysis.py`
-next to the notebook; it downloads, verifies, and streams the archive.
+and memory distributions, on this release. The notebook contains its
+analysis code, which downloads, verifies, and streams the archive, so no
+companion script is needed.
 
 ```bash
 pip install -r requirements.txt

@@ -22,16 +22,13 @@ requests and limits, not measurements of actual CPU or memory consumption.
    excludes `kube-system`, and represents regular containers with CPU
    requests. Init containers and regular containers without CPU requests
    are not represented.
-2. A verified ownership lookup retains confirmed first-party rows;
-   third-party and unresolved ownership are excluded. Ownership reflects
-   the lookup snapshot rather than necessarily the original event time.
-3. Existing request exclusions remove CPU requests at or below zero or
+2. Existing request exclusions remove CPU requests at or below zero or
    above 256,000 millicores, and memory requests above 1,048,576 MiB.
    Those request cutoffs are not applied to limits.
-4. One uniform draw selects whole namespace groups.
+3. One uniform draw selects whole namespace groups.
    All eligible records for selected groups are retained without seed
    retries or a record-count balancing target.
-5. A selected group is excluded in full if any eligible row has an
+4. A selected group is excluded in full if any eligible row has an
    invalid image-repository multiset or inconsistent represented-container
    count. No replacement groups are drawn.
 
@@ -87,7 +84,7 @@ Zero memory and a missing limit are distinct states.
 
 One `.tar.gz` contains `README.md`, `manifest.json`, and 672 CSVs.
 All CSVs include the twelve-column header defined in [schema.json](schema.json).
-The archive is 1,756,177,113 bytes; the CSV payload is 10,517,181,916 bytes.
+The archive is 1,756,175,802 bytes; the CSV payload is 10,517,181,916 bytes.
 
 The manifest records shard checksums, sizes, row counts, and invocation
 ranges. The archive checksum is in [SHA256SUMS](SHA256SUMS).

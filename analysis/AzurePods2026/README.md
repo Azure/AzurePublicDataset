@@ -11,25 +11,27 @@ support estimating total service traffic.
 
 ## Download and verify
 
-Download `AzurePodDataset2026.tar.gz` and `SHA256SUMS` from the
+Download `AzurePodDataset2026.tar.gz` from the
 [release](https://github.com/Azure/AzurePublicDataset/releases/tag/dataset-pods-2026)
-into an ignored `downloaded_data` directory.
+into an ignored `downloaded_data` directory. Use the
+[repository checksum file](SHA256SUMS) to verify it.
 
 In PowerShell, from this directory:
 
 ```powershell
 New-Item -ItemType Directory -Path downloaded_data -Force | Out-Null
+Copy-Item -LiteralPath SHA256SUMS -Destination downloaded_data
 Set-Location downloaded_data
 $release = 'https://github.com/Azure/AzurePublicDataset/releases/download/dataset-pods-2026'
 Invoke-WebRequest -Uri "$release/AzurePodDataset2026.tar.gz" -OutFile AzurePodDataset2026.tar.gz
-$expected = '4ec5457ca2d12bdaf5e73aa48ff04d55cac5a904e7add2fa31442a3e8ffc654e'
+$expected = ((Get-Content -LiteralPath SHA256SUMS -Raw).Trim() -split '\s+')[0]
 $actual = (Get-FileHash -LiteralPath AzurePodDataset2026.tar.gz -Algorithm SHA256).Hash.ToLowerInvariant()
 if ($actual -cne $expected) { throw 'Archive checksum mismatch' }
 tar -xzf AzurePodDataset2026.tar.gz
 ```
 
-On systems with `sha256sum`, the downloaded checksum file can instead be
-checked with `sha256sum --check SHA256SUMS`.
+On systems with `sha256sum`, copy the repository checksum file beside the
+archive and check it with `sha256sum --check SHA256SUMS`.
 
 The extracted archive has this flat layout:
 

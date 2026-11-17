@@ -63,11 +63,12 @@ Download from the
 
 | Asset | Contents | Size |
 | --- | --- | ---: |
-| [AzurePodDataset2026.tar.gz](https://github.com/Azure/AzurePublicDataset/releases/download/dataset-pods-2026/AzurePodDataset2026.tar.gz) | CSV shards, manifest, and README | 1,756,177,617 bytes |
-| [SHA256SUMS](https://github.com/Azure/AzurePublicDataset/releases/download/dataset-pods-2026/SHA256SUMS) | Archive checksum | Small text file |
+| [AzurePodDataset2026.tar.gz](https://github.com/Azure/AzurePublicDataset/releases/download/dataset-pods-2026/AzurePodDataset2026.tar.gz) | CSV shards, manifest, and README | 1,756,177,113 bytes |
 
-The [download list](AzurePodDataset2026Links.txt) contains the same asset
-URLs. Trace data is hosted as release assets, not as Git-tracked files.
+The [download list](AzurePodDataset2026Links.txt) contains the archive URL.
+The archive checksum is tracked in
+[SHA256SUMS](analysis/AzurePods2026/SHA256SUMS).
+Trace data is hosted as release assets, not as Git-tracked files.
 
 The archive is approximately 1.64 GiB and contains 674 members:
 `README.md`, `manifest.json`, and 672 header-bearing CSVs named

@@ -68,7 +68,7 @@ time, ordering, count, or limit-presence flag is changed by this step.
 ## Timing and missingness
 
 Creation and known deletion times are millisecond offsets from one private
-trace origin. There is no timing jitter. Shard names identify relative
+trace origin. Shard names identify relative
 creation windows, not production calendar dates.
 
 Rows are ordered by creation time and a private keyed UID tie-breaker.

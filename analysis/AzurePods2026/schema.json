@@ -1,0 +1,116 @@
+{
+  "dataset": "Azure Pod Trace 2026",
+  "schema_version": 1,
+  "format": "CSV",
+  "encoding": "UTF-8",
+  "header": true,
+  "delimiter": ",",
+  "record": "One captured pod creation/lifecycle record",
+  "missing_value": "",
+  "columns": [
+    {
+      "name": "invocation_id",
+      "type": "uint64",
+      "nullable": false,
+      "description": "Global sequence starting at 1 across all shards; not a pod UID."
+    },
+    {
+      "name": "customer_id",
+      "type": "string",
+      "nullable": false,
+      "pattern": "^[0-9a-f]{32}$",
+      "description": "Pseudonymous namespace identifier, stable across shards."
+    },
+    {
+      "name": "container_group_id",
+      "type": "string",
+      "nullable": false,
+      "pattern": "^[0-9a-f]{32}$",
+      "description": "Keyed pseudonym of the normalized image-repository multiset, stable across namespaces and shards."
+    },
+    {
+      "name": "created_time",
+      "type": "int64",
+      "nullable": false,
+      "unit": "milliseconds from the private trace origin"
+    },
+    {
+      "name": "deleted_time",
+      "type": "int64",
+      "nullable": true,
+      "unit": "milliseconds from the same origin",
+      "description": "Blank means unavailable, not necessarily ordinary censoring."
+    },
+    {
+      "name": "requested_cpu",
+      "type": "float64",
+      "nullable": false,
+      "unit": "millicores",
+      "description": "Positive declared aggregate request after downward power-of-two rounding."
+    },
+    {
+      "name": "requested_memory_mib",
+      "type": "float64",
+      "nullable": false,
+      "unit": "MiB",
+      "description": "Nonnegative declared aggregate request after rounding; source zero preserved."
+    },
+    {
+      "name": "limit_cpu",
+      "type": "float64",
+      "nullable": true,
+      "unit": "millicores",
+      "description": "Rounded aggregate limit only when all represented containers have a CPU limit."
+    },
+    {
+      "name": "limit_memory_mib",
+      "type": "float64",
+      "nullable": true,
+      "unit": "MiB",
+      "description": "Rounded aggregate limit; source zero and missing remain distinct."
+    },
+    {
+      "name": "num_containers",
+      "type": "uint32",
+      "nullable": false,
+      "description": "Positive number of represented regular containers."
+    },
+    {
+      "name": "has_all_cpu_limits",
+      "type": "boolean",
+      "nullable": false,
+      "csv_values": ["true", "false"]
+    },
+    {
+      "name": "has_all_mem_limits",
+      "type": "boolean",
+      "nullable": false,
+      "csv_values": ["true", "false"]
+    }
+  ],
+  "resource_quantization": {
+    "factor": 2,
+    "rounding": "floor",
+    "positive_rule": "2^floor(log2(x)) in cores or GiB",
+    "zero_rule": "Preserve zero",
+    "missing_limit_rule": "Preserve the empty CSV field",
+    "cpu_csv_units_per_core": 1000,
+    "memory_csv_units_per_gib": 1024,
+    "cpu_emitted_exponents": [-10, 12],
+    "memory_emitted_exponents": [-33, 12],
+    "bounds_are_inclusive": true,
+    "requests_and_limits_share_dimension_grid": true
+  },
+  "identity_scope": "All shards in this release",
+  "creation_window_ms": [0, 604800000],
+  "creation_window_upper_exclusive": true,
+  "shard_window_ms": 900000,
+  "invariants": [
+    "Invocation IDs are consecutive across the ordered shards.",
+    "Creation timestamps are nondecreasing.",
+    "A known deletion timestamp is not before creation.",
+    "A present limit is not below the corresponding request.",
+    "A limit-presence flag is true exactly when the corresponding aggregate limit is present.",
+    "The represented-container count is stable for an image-bundle ID."
+  ]
+}

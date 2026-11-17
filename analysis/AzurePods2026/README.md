@@ -12,10 +12,9 @@ support estimating total service traffic.
 ## Analysis notebook
 
 [AzurePodDataset2026.ipynb](AzurePodDataset2026.ipynb) presents the Unipool
-paper's **Instance lifetimes** and **Request arrivals** analyses, plus CPU
-and memory distributions, on this release. The notebook contains its
-analysis code, which downloads, verifies, and streams the archive, so no
-companion script is needed.
+paper's **Instance lifetimes** and **Request arrivals** analyses, plus
+request volume and CPU and memory distributions. All download,
+verification, and analysis code is included in the notebook.
 
 ```bash
 pip install -r requirements.txt

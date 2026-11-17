@@ -2,12 +2,26 @@
 
 See the [dataset page](../../AzurePodDataset2026.md),
 [dataset card](DATASET_CARD.md), and [field reference](schema.json).
-This directory contains documentation and checksums, not the trace data
-or the paper PDF.
+This directory contains documentation, checksums, and analysis code, not
+the trace data or the paper PDF.
 
 This dataset contains a representative sample of pod creation records,
 with an unspecified sampling fraction. The released trace alone does not
 support estimating total service traffic.
+
+## Analysis notebook
+
+[AzurePodDataset2026.ipynb](AzurePodDataset2026.ipynb) presents the Unipool
+paper's **Instance lifetimes** and **Request arrivals** analyses, plus CPU
+and memory distributions, on this release. Keep `azure_pod_analysis.py`
+next to the notebook; it downloads, verifies, and streams the archive.
+
+```bash
+pip install -r requirements.txt
+```
+
+Open the notebook in Jupyter or VS Code and run all cells. The first run
+downloads the 1.64 GiB archive into `downloaded_data/`.
 
 ## Download and verify
 

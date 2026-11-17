@@ -1,0 +1,4 @@
+ipykernel>=6
+matplotlib>=3.9.4
+numpy>=1.26
+pandas>=2.2.2

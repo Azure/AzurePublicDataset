@@ -29,6 +29,8 @@ The dataset includes this description, a
 [dataset card](analysis/AzurePods2026/DATASET_CARD.md), a
 [field reference](analysis/AzurePods2026/schema.json), and
 [reading and verification instructions](analysis/AzurePods2026/README.md).
+An [analysis notebook](analysis/AzurePods2026/AzurePodDataset2026.ipynb)
+plots instance lifetimes, request arrivals, and CPU and memory distributions.
 
 ## Using the data
 

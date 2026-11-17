@@ -87,7 +87,7 @@ Zero memory and a missing limit are distinct states.
 
 One `.tar.gz` contains `README.md`, `manifest.json`, and 672 CSVs.
 All CSVs include the twelve-column header defined in [schema.json](schema.json).
-The archive is 1,756,177,113 bytes; the CSV payload is 10,517,181,916 bytes.
+The archive is 1,756,175,813 bytes; the CSV payload is 10,517,181,916 bytes.
 
 The manifest records shard checksums, sizes, row counts, and invocation
 ranges. The archive checksum is in [SHA256SUMS](SHA256SUMS).
